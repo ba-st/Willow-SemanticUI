@@ -1,5 +1,8 @@
-processing
+Processing
 updateRoot: aRoot
 
-	aRoot javascript url: filesLocation / 'semantic.js'.
-	aRoot stylesheet url: filesLocation / 'semantic.css'
+	aRoot beHtml5.
+	aRoot meta
+		name: 'viewport';
+		content: 'width=device-width, initial-scale=1.0'.
+	semanticUILibraries do: [ :library | library updateRoot: aRoot ]

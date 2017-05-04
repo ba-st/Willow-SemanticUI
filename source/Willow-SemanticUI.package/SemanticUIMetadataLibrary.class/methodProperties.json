@@ -1,0 +1,23 @@
+{
+	"instance" : {
+		"fileSelectors" : "MaximilianoTabacman 5/3/2017 20:47",
+		"LatoLatinMediumWoff2Content" : "MaximilianoTabacman 5/3/2017 20:48",
+		"LatoLatinMediumEotContent" : "MaximilianoTabacman 5/3/2017 20:47",
+		"LatoLatinMediumTtfContent" : "MaximilianoTabacman 5/3/2017 20:48",
+		"latolatinfontsCss" : "MaximilianoTabacman 5/3/2017 20:48",
+		"LatoLatinMediumWoff" : "MaximilianoTabacman 5/3/2017 20:48",
+		"latolatinfontsCssContent" : "MaximilianoTabacman 5/3/2017 20:48",
+		"LatoLatinMediumEot" : "MaximilianoTabacman 5/3/2017 20:48",
+		"LatoLatinMediumWoffContent" : "MaximilianoTabacman 5/3/2017 20:48",
+		"changeRemoteFontsToLocalIn:" : "MaximilianoTabacman 5/3/2017 22:15",
+		"LatoLatinMediumTtf" : "MaximilianoTabacman 5/3/2017 20:48",
+		"LatoLatinMediumWoff2" : "MaximilianoTabacman 5/3/2017 20:48",
+		"defaultCacheDuration" : "MaximilianoTabacman 5/3/2017 20:32"
+	},
+	"class" : {
+		"version" : "MaximilianoTabacman 5/3/2017 20:31",
+		"libraryName" : "MaximilianoTabacman 5/3/2017 20:31",
+		"forDeployment" : "MaximilianoTabacman 5/3/2017 20:25",
+		"forDevelopment" : "MaximilianoTabacman 5/3/2017 20:25"
+	}
+}

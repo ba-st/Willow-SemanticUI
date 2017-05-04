@@ -1,12 +1,12 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/22/2016 19:54",
 	"super" : "FrontendComponentSupplier",
-	"category" : "Willow-SemanticUI",
+	"category" : "Willow-SemanticUI-Frontend",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"filesLocation"
+		"semanticUILibraries"
 	],
 	"name" : "SemanticUIComponentSupplier",
 	"type" : "normal"

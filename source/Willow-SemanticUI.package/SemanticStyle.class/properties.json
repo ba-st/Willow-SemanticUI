@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/15/2016 20:00",
 	"super" : "WAPresenter",
-	"category" : "Willow-SemanticUI",
+	"category" : "Willow-SemanticUI-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
