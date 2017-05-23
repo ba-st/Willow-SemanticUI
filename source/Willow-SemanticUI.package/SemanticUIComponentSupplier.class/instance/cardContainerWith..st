@@ -1,4 +1,4 @@
-accessing
+Supplying
 cardContainerWith: aContentBlock
 
 	^ [ :canvas | 

@@ -1,5 +1,5 @@
-accessing
-interactiveTableShowing: aColumnDefinitionCollection
+Supplying
+tableShowing: aColumnDefinitionCollection
 
 	^ SemanticFixedHeaderTable
 		showing: aColumnDefinitionCollection

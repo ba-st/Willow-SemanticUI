@@ -1,4 +1,4 @@
-accessing
+Supplying
 interactiveDropdownItemNamed: aName offering: anOptionCollection
 
 	^ SemanticDropdown

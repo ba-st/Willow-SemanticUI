@@ -1,4 +1,4 @@
-accessing
+Supplying
 containerWith: aContentBlock
 
 	^ [ :canvas | 

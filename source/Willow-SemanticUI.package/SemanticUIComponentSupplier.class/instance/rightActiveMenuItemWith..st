@@ -1,4 +1,4 @@
-accessing
+Supplying
 rightActiveMenuItemWith: aContentBlock
 
 	^ [ :canvas | 

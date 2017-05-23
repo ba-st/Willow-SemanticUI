@@ -1,4 +1,4 @@
-accessing
+Supplying
 interactiveCheckBoxDescribedBy: aDescription
 
 	^ SemanticCheckbox

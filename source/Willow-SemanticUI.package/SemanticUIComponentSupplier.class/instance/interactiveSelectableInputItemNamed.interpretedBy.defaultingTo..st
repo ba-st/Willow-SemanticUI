@@ -1,4 +1,4 @@
-accessing
+Supplying
 interactiveSelectableInputItemNamed: aName interpretedBy: anInputInterpreter defaultingTo: aDefaultModel
 
 	| inputView |
