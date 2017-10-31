@@ -1,7 +1,5 @@
 uploaded metadata
 semanticminCss
-
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'semantic.min.css'
 		mimeType: (WAMimeType main: 'text' sub: 'css')

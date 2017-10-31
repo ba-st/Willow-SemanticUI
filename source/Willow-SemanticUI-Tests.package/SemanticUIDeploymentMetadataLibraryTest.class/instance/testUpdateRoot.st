@@ -11,4 +11,4 @@ testUpdateRoot
 	self
 		assert: html
 		equals:
-			'<html><head><title></title><link rel="stylesheet" type="text/css" href="/files/semantic-ui-2.1.7/semantic.min.css"/><script type="text/javascript" src="/files/semantic-ui-2.1.7/semantic.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+			'<html><head><title></title><link rel="stylesheet" type="text/css" href="/files/semantic-ui-2.2.13/semantic.min.css"/><script type="text/javascript" src="/files/semantic-ui-2.2.13/semantic.min.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'

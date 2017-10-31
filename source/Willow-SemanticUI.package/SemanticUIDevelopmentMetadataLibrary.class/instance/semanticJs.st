@@ -1,7 +1,5 @@
 uploaded metadata
 semanticJs
-
-	<ignoreForCoverage>
 	^ WAFileLibraryResource
 		filepath: 'semantic.js'
 		mimeType: (WAMimeType main: 'application' sub: 'x-javascript')
