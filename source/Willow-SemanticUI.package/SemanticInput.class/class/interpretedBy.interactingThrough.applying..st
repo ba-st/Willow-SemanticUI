@@ -4,4 +4,4 @@ interpretedBy: aTextCodec interactingThrough: anInteractionInterpreter applying:
 	^ self new
 		initializeInterpretedBy: aTextCodec
 		interactingThrough: anInteractionInterpreter
-		applying: aComponentCommand
+		applying: aComponentCommand asWebComponentCommand

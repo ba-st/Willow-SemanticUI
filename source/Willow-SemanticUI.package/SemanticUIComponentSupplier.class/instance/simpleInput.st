@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 simpleInput
 
 	^ SemanticInput
@@ -6,4 +6,4 @@ simpleInput
 		interactingThrough:
 			(WebInteractionInterpreter
 				workingWith: WebComponentInteraction neverTriggered)
-		applying: CompositeComponentCommand empty
+		applying: [:theInput | ]

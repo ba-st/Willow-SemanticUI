@@ -4,4 +4,4 @@ labeledWithContentOf: aHolder interactingThrough: anInteractionInterpreter apply
 	^ self new
 		initializeLabeledWithContentOf: aHolder
 		interactingThrough: anInteractionInterpreter
-		applying: aComponentCommand
+		applying: aComponentCommand asWebComponentCommand

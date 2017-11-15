@@ -1,4 +1,4 @@
-rendering - private
+private - rendering
 renderInputOn: aCanvas
 
 	| component |

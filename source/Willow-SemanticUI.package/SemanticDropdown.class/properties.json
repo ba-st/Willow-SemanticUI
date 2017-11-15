@@ -1,16 +1,14 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/13/2016 11:22",
-	"super" : "WAPresenter",
+	"super" : "SingleSelectionWebViewBehavior",
 	"category" : "Willow-SemanticUI-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"name",
-		"options",
 		"interactionInterpreter",
-		"componentCommand",
-		"chosenElementHolder"
+		"componentCommand"
 	],
 	"name" : "SemanticDropdown",
 	"type" : "normal"

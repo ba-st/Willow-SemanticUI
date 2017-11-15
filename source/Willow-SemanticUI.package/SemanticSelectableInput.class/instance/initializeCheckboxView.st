@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeCheckboxView
 
 	checkboxView := SemanticCheckbox

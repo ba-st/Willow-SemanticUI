@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 menuItemWith: aContentBlock
 
 	^ [ :canvas | 

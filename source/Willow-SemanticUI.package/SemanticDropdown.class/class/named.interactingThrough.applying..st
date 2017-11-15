@@ -1,7 +1,7 @@
 instance creation
-labeled: aLabel interactingThrough: anInteractionInterpreter applying: aComponentCommand
+named: aName interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
 	^ self new
-		initializeLabeled: aLabel
+		initializeNamed: aName
 		interactingThrough: anInteractionInterpreter
 		applying: aComponentCommand asWebComponentCommand

@@ -1,4 +1,4 @@
-configuring - private
+private - configuring
 chooseOptionAt: anIndex
 
-	chosenElementHolder := Optional containing: (options at: anIndex)
+	self chooseEqualTo: (availableElements at: anIndex)

@@ -1,6 +1,6 @@
-configuring - private
+private - configuring
 configureValueOf: anInput
 
-	chosenElementHolder
-		withContentDo: [ :option | anInput value: (options indexOf: option) ]
+	chosenElementOptional
+		withContentDo: [ :option | anInput value: (availableElements indexOf: option) ]
 		ifUnused: [ :explanations |  ]

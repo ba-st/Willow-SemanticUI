@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeSelecting: anInputView defaultingTo: aDefaultModel applying: aComponentCommand
 
 	componentCommand := aComponentCommand.

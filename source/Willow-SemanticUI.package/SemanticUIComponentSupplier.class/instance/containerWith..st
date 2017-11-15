@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 containerWith: aContentBlock
 
 	^ [ :canvas | 

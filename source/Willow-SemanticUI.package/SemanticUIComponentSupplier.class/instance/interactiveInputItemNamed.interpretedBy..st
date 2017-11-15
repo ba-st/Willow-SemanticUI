@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 interactiveInputItemNamed: aName interpretedBy: aTextCodec
 
 	^ SemanticInput

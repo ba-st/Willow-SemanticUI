@@ -1,4 +1,4 @@
-rendering - private
+private - rendering
 render: option asOptionAt: index on: aCanvas
 
 	aCanvas div

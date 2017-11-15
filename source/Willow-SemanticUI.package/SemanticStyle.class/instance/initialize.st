@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initialize
 
 	cssClasses := OrderedCollection new

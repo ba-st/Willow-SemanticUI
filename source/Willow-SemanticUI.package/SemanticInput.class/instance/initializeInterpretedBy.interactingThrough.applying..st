@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeInterpretedBy: aTextCodec interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
 	textCodec := aTextCodec.

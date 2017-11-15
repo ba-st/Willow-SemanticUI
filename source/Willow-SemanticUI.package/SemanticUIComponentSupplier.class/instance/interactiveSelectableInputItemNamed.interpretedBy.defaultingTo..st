@@ -1,4 +1,4 @@
-Supplying
+Supplying - Non Portable
 interactiveSelectableInputItemNamed: aName interpretedBy: anInputInterpreter defaultingTo: aDefaultModel
 
 	| inputView |
@@ -7,4 +7,4 @@ interactiveSelectableInputItemNamed: aName interpretedBy: anInputInterpreter def
 	^ SemanticSelectableInput
 		selecting: inputView
 		defaultingTo: aDefaultModel
-		applying: (ComponentClassificationCommand toStyleWith: SemanticStyle for item)
+		applying: [:theInput | theInput addClass semantic item ]
