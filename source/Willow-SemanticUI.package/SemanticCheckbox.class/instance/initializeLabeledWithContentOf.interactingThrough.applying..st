@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initializeLabeledWithContentOf: aHolder interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
 	labelHolder := aHolder.

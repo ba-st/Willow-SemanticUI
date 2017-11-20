@@ -1,4 +1,4 @@
-general
+grid
 grid
 
 	cssClasses add: 'grid'

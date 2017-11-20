@@ -1,4 +1,4 @@
-configuring - private
+private - configuring
 configureNameOf: anInput on: aCanvas
 
 	| componentName |

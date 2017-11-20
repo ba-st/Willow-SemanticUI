@@ -1,4 +1,4 @@
-rendering - private
+private - rendering
 renderLabelFor: anIdentifier on: aCanvas
 
 	| labelComponent |
