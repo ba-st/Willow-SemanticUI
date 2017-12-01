@@ -9,4 +9,4 @@ naturalNumberFieldApplying: aComponentCommand
 
 	^ SemanticComponent
 		wrapping: field
-		applying: [ :container | container addClass semantic ui + container addClass semantic input ]
+		applying: [ :container | container addClass semantic: [ :style | style ui input ] ]

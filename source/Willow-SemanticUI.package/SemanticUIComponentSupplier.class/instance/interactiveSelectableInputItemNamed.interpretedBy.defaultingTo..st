@@ -7,4 +7,4 @@ interactiveSelectableInputItemNamed: aName interpretedBy: anInputInterpreter def
 	^ SemanticSelectableInput
 		selecting: inputView
 		defaultingTo: aDefaultModel
-		applying: [:theInput | theInput addClass semantic item ]
+		applying: [ :theInput | theInput addClass semantic: [ :style | style item ] ]
