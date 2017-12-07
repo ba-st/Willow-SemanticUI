@@ -1,0 +1,1 @@
+I represent the footer in a Semantic UI modal.
