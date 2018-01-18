@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "MaximilianoTabacman 3/23/2016 09:58",
-	"super" : "WAPresenter",
+	"super" : "WAPainter",
 	"category" : "Willow-SemanticUI-WebViews",
 	"classinstvars" : [ ],
 	"pools" : [ ],
