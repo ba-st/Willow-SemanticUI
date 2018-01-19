@@ -1,4 +1,4 @@
-icons
+general
 icon
 
 	cssClasses add: 'icon'

@@ -1,4 +1,4 @@
-instance creation - private
+private - instance creation
 labeledWithContentOf: aHolder interactingThrough: anInteractionInterpreter applying: aComponentCommand
 
 	^ self new

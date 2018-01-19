@@ -1,0 +1,4 @@
+configuring
+onTrigger
+
+	^ CombinedWebInteractionInterpreter combiningInterpretersOf: buttons

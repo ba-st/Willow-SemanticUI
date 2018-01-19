@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "MaximilianoTabacman 12/6/2017 00:32",
+	"super" : "WAPainter",
+	"category" : "Willow-SemanticUI-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"header",
+		"footer",
+		"dialog"
+	],
+	"name" : "SemanticModal",
+	"type" : "normal"
+}

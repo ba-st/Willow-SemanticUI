@@ -2,4 +2,4 @@ private
 fileSelectors
 
 	<ignoreForCoverage>
-	^ #(#LatoLatinMediumEot #LatoLatinMediumTtf #LatoLatinMediumWoff #LatoLatinMediumWoff2 #latolatinfontsCss)
+	^ #(#LatoLatinMediumEot #LatoLatinMediumTtf #LatoLatinMediumWoff #LatoLatinMediumWoff2 #latolatinfontsCss themesdefaultassetsfontsiconsEot themesdefaultassetsfontsiconsOtf themesdefaultassetsfontsiconsSvg themesdefaultassetsfontsiconsTtf themesdefaultassetsfontsiconsWoff themesdefaultassetsfontsiconsWoff2 themesdefaultassetsimagesflagsPng)

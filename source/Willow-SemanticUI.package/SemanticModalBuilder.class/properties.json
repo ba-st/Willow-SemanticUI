@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "MaximilianoTabacman 12/6/2017 09:12",
+	"super" : "WillowComponentBuilder",
+	"category" : "Willow-SemanticUI-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"headerBinding",
+		"content",
+		"dialogCommand",
+		"footerButtons"
+	],
+	"name" : "SemanticModalBuilder",
+	"type" : "normal"
+}

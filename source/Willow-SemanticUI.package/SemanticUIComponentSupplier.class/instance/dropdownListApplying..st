@@ -4,4 +4,5 @@ dropdownListApplying: aComponentCommand
 	^ SemanticDropdown
 		named: ''
 		interactingThrough: WebInteractionInterpreter forChangeInComponentValue
-		applying: [ :theDropdown | theDropdown addClass semantic item + aComponentCommand ]
+		applying:
+			[ :theDropdown | (theDropdown addClass semantic: [ :style | style item ]) + aComponentCommand ]

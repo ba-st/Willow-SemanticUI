@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "MaximilianoTabacman 11/19/2017 15:26",
+	"super" : "SingleSelectionWebViewBehavior",
+	"category" : "Willow-SemanticUI-WebViews",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"renderingBlock",
+		"commandToComponent",
+		"interactionInterpreter",
+		"identifierAssigner"
+	],
+	"name" : "SemanticRadioWebView",
+	"type" : "normal"
+}
