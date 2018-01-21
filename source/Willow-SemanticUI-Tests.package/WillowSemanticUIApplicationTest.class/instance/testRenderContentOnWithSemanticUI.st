@@ -3,7 +3,7 @@ testRenderContentOnWithSemanticUI
 
 	| html application |
 
-	application := WillowTestingApplication using: SemanticUIComponentSupplier online.
+	application := WillowTestingApplication using: self componentSupplier.
 	html := self fullDocumentRendering: application.
 
 	self
