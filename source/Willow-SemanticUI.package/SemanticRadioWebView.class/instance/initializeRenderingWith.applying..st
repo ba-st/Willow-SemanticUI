@@ -1,8 +1,8 @@
 initialization
-initializeRenderingWith: aRenderingBlock applying: aCommandToComponent
+initializeRenderingWith: aRenderingBlock applying: anInputCommand
 
 	renderingBlock := aRenderingBlock.
-	commandToComponent := aCommandToComponent.
+	inputCommand := anInputCommand.
 
 	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'radio-button'
