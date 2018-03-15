@@ -7,9 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"renderingBlock",
-		"commandToComponent",
 		"interactionInterpreter",
-		"identifierAssigner"
+		"identifierAssigner",
+		"inputCommand"
 	],
 	"name" : "SemanticRadioWebView",
 	"type" : "normal"
