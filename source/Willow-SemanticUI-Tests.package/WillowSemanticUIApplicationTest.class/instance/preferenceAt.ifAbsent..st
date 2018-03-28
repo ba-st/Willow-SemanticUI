@@ -1,4 +1,4 @@
 accessing
-preferenceAt: aSymbol ifAbsent: aBlock
+preferenceAt: aKey ifAbsent: aBlock
 
 	^ aBlock value
