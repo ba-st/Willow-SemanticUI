@@ -1,1 +1,0 @@
-I represent the header in a Semantic UI modal.

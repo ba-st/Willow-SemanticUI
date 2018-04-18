@@ -1,4 +1,0 @@
-Accessing
-libraryName
-
-	^ 'semantic-ui'
