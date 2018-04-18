@@ -1,1 +1,0 @@
-A generic container for the div required by Semantic UI outside its components.

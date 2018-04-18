@@ -1,1 +1,0 @@
-A component to represent a Semantic UI set of buttons that behaves like a radio button.
