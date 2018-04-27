@@ -43,6 +43,12 @@ SemanticUIComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: a
 			[ :theButton | (theButton addClass semantic: [ :style | style ui button ]) + aComponentCommand ]
 ]
 
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> asynchronicLinkLabeled: aRenderable applying: aComponentCommand [
+
+	^ LinkWebView asynchronicLabeled: aRenderable applying: aComponentCommand
+]
+
 { #category : #'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> bottomMenuWith: aContentBlock [
 
@@ -79,11 +85,9 @@ SemanticUIComponentSupplier >> dialogBuilder [
 { #category : #Supplying }
 SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand [
 
-	^ SemanticDropdown
-		named: ''
-		interactingThrough: WebInteractionInterpreter forChangeInComponentValue
+	^ DropDownListWebView
 		applying:
-			[ :theDropdown | (theDropdown addClass semantic: [ :style | style item ]) + aComponentCommand ]
+			[ :view | (view addScript js: [ :canvas | canvas jQuery this call: 'dropdown' ]) + aComponentCommand ]
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -94,6 +98,16 @@ SemanticUIComponentSupplier >> dropdownListNamed: aName applying: aComponentComm
 		interactingThrough: WebInteractionInterpreter forChangeInComponentValue
 		applying:
 			[ :theDropdown | (theDropdown addClass semantic: [ :style | style item ]) + aComponentCommand ]
+]
+
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand withLegend: aTitle applying: legendCommand [
+
+	^ FieldSetWebView
+		containing: aWebView
+		applying: fieldSetCommand
+		withLegend: aTitle
+		applying: legendCommand
 ]
 
 { #category : #initialization }
@@ -147,6 +161,12 @@ SemanticUIComponentSupplier >> menuItemWith: aContentBlock [
 	canvas div
 		class: SemanticStyle for item;
 		with: aContentBlock ]
+]
+
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
+
+	^ TextFieldWebView multiLineTriggeringOnChangeApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
@@ -211,6 +231,20 @@ SemanticUIComponentSupplier >> simpleInput [
 SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand
+]
+
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
+
+	^ SingleSelectionListBoxWebView
+		displayingAtOnce: aNumberOfElements
+		applying: aComponentCommand
+]
+
+{ #category : #'Supplying - Non Portable' }
+SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
+
+	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
 { #category : #'Supplying - Non Portable' }

@@ -23,6 +23,14 @@ SemanticModal class >> withHeader: aModalHeader content: aBodyView footer: aModa
 ]
 
 { #category : #'private - accessing' }
+SemanticModal >> cleanModalFunctionsOn: canvas [
+
+	^ (canvas jQuery this remove
+		, ((canvas jQuery id: WillowConstants dialogSectionName) html: [ :aSubCanvas |  ]))
+		asFunction
+]
+
+{ #category : #'private - accessing' }
 SemanticModal >> contentWrapping: aBodyView [
 
 	^ [ :canvas | 
@@ -40,10 +48,25 @@ SemanticModal >> initializeWithHeader: aModalHeader content: aBodyView footer: a
 	footer := aModalFooter.
 	dialog := GenericContainerWebView
 		wrapping: (self contentWrapping: aBodyView)
-		applying: [ :container | 
-			(container addClass semantic: [ :style | style ui modal ])
-				+ (container addScript js: [ :canvas | canvas jQuery this call: 'modal' with: 'show' ])
-				+ aDialogCommand ]
+		applying:
+			[ :container | (self styleCommandFor: container) + (self modalScriptCommandFor: container) + aDialogCommand ]
+]
+
+{ #category : #'private - accessing' }
+SemanticModal >> modalScriptCommandFor: container [
+
+	^ container addScript
+		js: [ :canvas | 
+			canvas jQuery this
+				call: 'modal'
+					with:
+					(Dictionary new
+						at: 'onHidden' put: (self cleanModalFunctionsOn: canvas);
+						at: 'autofocus' put: false;
+						at: 'allowMultiple' put: true;
+						at: 'closable' put: false;
+						yourself);
+				call: 'modal' with: 'show' ]
 ]
 
 { #category : #configuring }
@@ -56,4 +79,10 @@ SemanticModal >> onTrigger [
 SemanticModal >> renderContentOn: aCanvas [
 
 	aCanvas render: dialog
+]
+
+{ #category : #'private - accessing' }
+SemanticModal >> styleCommandFor: container [
+
+	^ container addClass semantic: [ :style | style ui modal ]
 ]
