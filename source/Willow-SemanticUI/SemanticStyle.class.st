@@ -598,6 +598,12 @@ SemanticStyle >> submit [
 	cssClasses add: 'submit'
 ]
 
+{ #category : #color }
+SemanticStyle >> success [
+
+	cssClasses add: 'success'
+]
+
 { #category : #table }
 SemanticStyle >> table [
 
