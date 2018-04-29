@@ -36,6 +36,16 @@ SemanticModalBuilder >> buildApplying: aDocumentCommand [
 ]
 
 { #category : #configuring }
+SemanticModalBuilder >> confirmWith: aString [
+
+	self
+		addFooterButton:
+			(GenericContainerWebView
+				wrapping: aString
+				applying: [ :button | button addClass semantic: [ :style | style ui primary approve button ] ])
+]
+
+{ #category : #configuring }
 SemanticModalBuilder >> dismissableHeaderTitled: aRenderable [
 
 	headerBinding := Binding to: (SemanticModalHeader dismissableTitled: aRenderable)

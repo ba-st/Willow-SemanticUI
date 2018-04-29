@@ -3,11 +3,11 @@ A concatenation of Semantic UI css styles.
 "
 Class {
 	#name : #SemanticStyle,
-	#superclass : #WAPainter,
+	#superclass : #Object,
 	#instVars : [
 		'cssClasses'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -29,6 +29,12 @@ SemanticStyle >> action [
 ]
 
 { #category : #general }
+SemanticStyle >> actions [
+
+	cssClasses add: 'actions'
+]
+
+{ #category : #general }
 SemanticStyle >> active [
 
 	cssClasses add: 'active'
@@ -38,6 +44,12 @@ SemanticStyle >> active [
 SemanticStyle >> aligned [
 
 	cssClasses add: 'aligned'
+]
+
+{ #category : #color }
+SemanticStyle >> approve [
+
+	cssClasses add: 'approve'
 ]
 
 { #category : #general }
@@ -56,6 +68,12 @@ SemanticStyle >> avatar [
 SemanticStyle >> basic [
 
 	cssClasses add: 'basic'
+]
+
+{ #category : #sizes }
+SemanticStyle >> big [
+
+	cssClasses add: 'big'
 ]
 
 { #category : #menu }
@@ -185,6 +203,12 @@ SemanticStyle >> divider [
 ]
 
 { #category : #general }
+SemanticStyle >> dividing [
+
+	cssClasses add: 'dividing'
+]
+
+{ #category : #general }
 SemanticStyle >> doubling [
 
 	cssClasses add: 'doubling'
@@ -214,6 +238,12 @@ SemanticStyle >> equal [
 	cssClasses add: 'equal'
 ]
 
+{ #category : #color }
+SemanticStyle >> error [
+
+	cssClasses add: 'error'
+]
+
 { #category : #general }
 SemanticStyle >> field [
 
@@ -224,6 +254,12 @@ SemanticStyle >> field [
 SemanticStyle >> fields [
 
 	cssClasses add: 'fields'
+]
+
+{ #category : #icons }
+SemanticStyle >> file [
+
+	cssClasses add: 'file'
 ]
 
 { #category : #general }
@@ -328,6 +364,12 @@ SemanticStyle >> item [
 	cssClasses add: 'item'
 ]
 
+{ #category : #general }
+SemanticStyle >> items [
+
+	cssClasses add: 'items'
+]
+
 { #category : #printing }
 SemanticStyle >> javascriptOn: aStream [
 
@@ -364,10 +406,22 @@ SemanticStyle >> list [
 	cssClasses add: 'list'
 ]
 
+{ #category : #general }
+SemanticStyle >> longer [
+
+	cssClasses add: 'longer'
+]
+
 { #category : #menu }
 SemanticStyle >> menu [
 
 	cssClasses add: 'menu'
+]
+
+{ #category : #container }
+SemanticStyle >> message [
+
+	cssClasses add: 'message'
 ]
 
 { #category : #general }
@@ -392,6 +446,12 @@ SemanticStyle >> mini [
 SemanticStyle >> modal [
 
 	cssClasses add: 'modal'
+]
+
+{ #category : #color }
+SemanticStyle >> ok [
+
+	cssClasses add: 'ok'
 ]
 
 { #category : #color }
@@ -502,6 +562,12 @@ SemanticStyle >> seven [
 	cssClasses add: 'seven'
 ]
 
+{ #category : #numbers }
+SemanticStyle >> six [
+
+	cssClasses add: 'six'
+]
+
 { #category : #input }
 SemanticStyle >> slider [
 
@@ -530,6 +596,12 @@ SemanticStyle >> striped [
 SemanticStyle >> submit [
 
 	cssClasses add: 'submit'
+]
+
+{ #category : #color }
+SemanticStyle >> success [
+
+	cssClasses add: 'success'
 ]
 
 { #category : #table }
