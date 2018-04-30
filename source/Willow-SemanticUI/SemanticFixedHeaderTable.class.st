@@ -62,7 +62,7 @@ SemanticFixedHeaderTable >> renderContentOn: aCanvas [
 		with: [ self renderTableBodyOn: aCanvas ]
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderFillerHeadingOn: aCanvas [
 
 	aCanvas tableHeading
@@ -70,19 +70,19 @@ SemanticFixedHeaderTable >> renderFillerHeadingOn: aCanvas [
 		with: ''
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderHeadingFor: columnDefinition on: aCanvas [
 
 	columnDefinition renderHeadingOn: aCanvas
 ]
 
-{ #category : #'rendering - private' }
-SemanticFixedHeaderTable >> renderRowFor: anElement on: aCanvas [
+{ #category : #'private - rendering' }
+SemanticFixedHeaderTable >> renderRowAt: anIndex for: anElement on: aCanvas [
 
-	aCanvas tableRow: [ columnDefinitions do: [ :columnDefinition | columnDefinition renderCellFor: anElement on: aCanvas ] ]
+	aCanvas tableRow: [ columnDefinitions do: [ :columnDefinition | columnDefinition renderCellAt: anIndex for: anElement on: aCanvas ] ]
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderTableBodyOn: aCanvas [
 
 	| tableComponent |
@@ -94,7 +94,7 @@ SemanticFixedHeaderTable >> renderTableBodyOn: aCanvas [
 	tableComponent with: [ aCanvas render: identifiedTableBody ]
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderTableHeaderOn: aCanvas [
 
 	aCanvas table
@@ -102,7 +102,7 @@ SemanticFixedHeaderTable >> renderTableHeaderOn: aCanvas [
 		with: [ aCanvas tableHead: [ self renderTableHeadingsOn: aCanvas ] ]
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderTableHeadingsOn: aCanvas [
 
 	columnDefinitions
@@ -110,10 +110,10 @@ SemanticFixedHeaderTable >> renderTableHeadingsOn: aCanvas [
 	self renderFillerHeadingOn: aCanvas
 ]
 
-{ #category : #'rendering - private' }
+{ #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderTableRowsOn: aCanvas [
 
-	elements do: [ :element | self renderRowFor: element on: aCanvas ]
+	elements doWithIndex: [ :element :index | self renderRowAt: index for: element on: aCanvas ]
 ]
 
 { #category : #configuring }
