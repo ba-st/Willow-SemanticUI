@@ -27,7 +27,7 @@ SemanticFixedHeaderTable >> identifiedElementsView [
 	^ identifiedTableBody
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 SemanticFixedHeaderTable >> initializeShowing: aColumnDefinitionCollection interactingThrough: anInteractionInterpreter [
 
 	columnDefinitions := aColumnDefinitionCollection.
@@ -36,7 +36,7 @@ SemanticFixedHeaderTable >> initializeShowing: aColumnDefinitionCollection inter
 	self setElementsTo: #()
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 SemanticFixedHeaderTable >> initializeTableBody [
 
 	identifiedTableBody := IdentifiedWebView
@@ -73,13 +73,26 @@ SemanticFixedHeaderTable >> renderFillerHeadingOn: aCanvas [
 { #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderHeadingFor: columnDefinition on: aCanvas [
 
-	columnDefinition renderHeadingOn: aCanvas
+	| tableBuilder columnBuilder |
+
+	tableBuilder := TableWebViewBuilder new.
+	columnBuilder := WebTableColumnRendererBuilder on: tableBuilder.
+	columnDefinition value: columnBuilder.
+	columnBuilder build renderHeadingOn: aCanvas
 ]
 
 { #category : #'private - rendering' }
 SemanticFixedHeaderTable >> renderRowAt: anIndex for: anElement on: aCanvas [
 
-	aCanvas tableRow: [ columnDefinitions do: [ :columnDefinition | columnDefinition renderCellAt: anIndex for: anElement on: aCanvas ] ]
+	| tableBuilder columnBuilder |
+
+	tableBuilder := TableWebViewBuilder new.
+	aCanvas
+		tableRow: [ columnDefinitions
+				do: [ :columnDefinition | 
+					columnBuilder := WebTableColumnRendererBuilder on: tableBuilder.
+					columnDefinition value: columnBuilder.
+					columnBuilder build renderCellAt: anIndex for: anElement on: aCanvas ] ]
 ]
 
 { #category : #'private - rendering' }
@@ -87,7 +100,7 @@ SemanticFixedHeaderTable >> renderTableBodyOn: aCanvas [
 
 	| tableComponent |
 
-	"El orden es importante"
+	"The order of collaborations is relevant!"
 	tableComponent := aCanvas table.
 	tableComponent class: SemanticStyle ui striped selectable definition fixed table.
 	interactionInterpreter applyTo: tableComponent on: aCanvas.

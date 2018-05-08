@@ -24,33 +24,33 @@ SemanticPopup >> applyTo: aComponent on: aCanvas [
 	aComponent script: (self popupScriptOn: aCanvas)
 ]
 
-{ #category : #'accessing - private' }
+{ #category : #'private - accessing' }
 SemanticPopup >> contentDataCommand [
 
 	^ ComponentMetadataCommand toDeclare: 'content' with: content
 ]
 
-{ #category : #'initailize-release' }
+{ #category : #initialization }
 SemanticPopup >> initializeSettings [
 
 	settings := Dictionary new.
 	settings at: 'inline' put: true
 ]
 
-{ #category : #'initailize-release' }
+{ #category : #initialization }
 SemanticPopup >> initializeToDisplay: aContent [
 
 	content := aContent.
 	self initializeSettings
 ]
 
-{ #category : #'accessing - private' }
+{ #category : #'private - accessing' }
 SemanticPopup >> popupFunctionName [
 
 	^ 'popup'
 ]
 
-{ #category : #'accessing - private' }
+{ #category : #'private - accessing' }
 SemanticPopup >> popupScriptOn: aCanvas [
 
 	^ aCanvas jQuery this call: self popupFunctionName with: settings

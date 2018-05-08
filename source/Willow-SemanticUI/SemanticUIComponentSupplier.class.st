@@ -247,6 +247,14 @@ SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aCom
 	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> tableBuilder [
+
+	^ TableWebViewBuilder new
+		styledWith: SemanticStyle ui table;
+		yourself
+]
+
 { #category : #'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> tableShowing: aColumnDefinitionCollection [
 
