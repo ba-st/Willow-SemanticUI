@@ -68,15 +68,6 @@ SemanticUIComponentSupplier >> cardContainerWith: aContentBlock [
 ]
 
 { #category : #'Supplying - Non Portable' }
-SemanticUIComponentSupplier >> containerWith: aContentBlock [
-
-	^ [ :canvas | 
-	canvas div
-		class: SemanticStyle ui container;
-		with: aContentBlock ]
-]
-
-{ #category : #'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> dialogBuilder [
 
 	^ SemanticModalBuilder new
@@ -247,12 +238,12 @@ SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aCom
 	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #'Supplying - Non Portable' }
-SemanticUIComponentSupplier >> tableShowing: aColumnDefinitionCollection [
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> tableBuilder [
 
-	^ SemanticFixedHeaderTable
-		showing: aColumnDefinitionCollection
-		interactingThrough: WebInteractionInterpreter forClickOnComponent
+	^ TableWebViewBuilder new
+		styledWith: SemanticStyle ui table;
+		yourself
 ]
 
 { #category : #'Supplying - Non Portable' }
