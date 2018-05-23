@@ -26,7 +26,7 @@ SemanticModal class >> withHeader: aModalHeader content: aBodyView footer: aModa
 SemanticModal >> cleanModalFunctionsOn: canvas [
 
 	^ (canvas jQuery this remove
-		, ((canvas jQuery id: WillowConstants dialogSectionName) html: [ :aSubCanvas |  ]))
+		, ((canvas jQuery id: Willow constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ]))
 		asFunction
 ]
 
