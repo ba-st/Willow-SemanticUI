@@ -61,10 +61,8 @@ SemanticCheckbox >> containerComponentOn: aCanvas [
 	| containerComponent |
 
 	containerComponent := aCanvas div class: SemanticStyle ui checkbox.
-	componentCommand applyTo: containerComponent on: aCanvas.
-	labelHolder
-		withContentDo: [ :content |  ]
-		ifUnused: [ containerComponent class: SemanticStyle for fitted ].
+	containerComponent apply: componentCommand.
+	labelHolder withContentDo: [ :content |  ] ifUnused: [ containerComponent class: SemanticStyle for fitted ].
 	^ containerComponent
 ]
 
@@ -80,14 +78,11 @@ SemanticCheckbox >> initializeLabeledWithContentOf: aHolder interactingThrough: 
 { #category : #'private - rendering' }
 SemanticCheckbox >> inputRenderedOn: aCanvas [
 
-	| component |
-
-	component := aCanvas checkbox.
-	component
+	^ aCanvas checkbox
 		value: self isChecked;
-		callback: [ :aBoolean | self setCheckTo: aBoolean ].
-	interactionInterpreter applyTo: component on: aCanvas.
-	^ component
+		callback: [ :aBoolean | self setCheckTo: aBoolean ];
+		interactUsing: interactionInterpreter;
+		yourself
 ]
 
 { #category : #testing }

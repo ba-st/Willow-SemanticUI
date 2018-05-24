@@ -69,9 +69,10 @@ SemanticRadioWebView >> renderInputFor: anElement asPartOf: aRadioGroup on: aCan
 
 	radioButton := aRadioGroup radioButton.
 	identifierAssigner withAssignedIdentifierDo: [ :id | radioButton id: id ].
-	inputCommand applyTo: radioButton on: aCanvas.
-	interactionInterpreter applyTo: radioButton on: aCanvas.
-	radioButton value: anElement.
+	radioButton
+		apply: inputCommand;
+		interactUsing: interactionInterpreter;
+		value: anElement.
 	self renderLabelFor: anElement on: aCanvas
 ]
 

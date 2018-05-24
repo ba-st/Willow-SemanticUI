@@ -73,11 +73,8 @@ SemanticDropdown >> render: option asOptionAt: index on: aCanvas [
 { #category : #rendering }
 SemanticDropdown >> renderContentOn: aCanvas [
 
-	| component |
-
-	component := aCanvas div.
-	componentCommand applyTo: component on: aCanvas.
-	component
+	aCanvas div
+		apply: componentCommand;
 		class: SemanticStyle ui selection dropdown item;
 		script: (self dropdownScriptOn: aCanvas);
 		with: [ self renderInputOn: aCanvas.
@@ -100,7 +97,7 @@ SemanticDropdown >> renderInputOn: aCanvas [
 	component := aCanvas hiddenInput.
 	self configureValueOf: component.
 	self configureCallbackOf: component.
-	interactionInterpreter applyTo: component on: aCanvas
+	component interactUsing: interactionInterpreter
 ]
 
 { #category : #'private - rendering' }

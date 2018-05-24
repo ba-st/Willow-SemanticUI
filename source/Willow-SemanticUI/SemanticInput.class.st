@@ -31,16 +31,6 @@ SemanticInput >> assignIdentifierTo: anInput on: aCanvas [
 	anInput id: currentInputIdentifier
 ]
 
-{ #category : #'private - accessing' }
-SemanticInput >> containerComponentOn: aCanvas [
-
-	| containerComponent |
-
-	containerComponent := aCanvas div.
-	componentCommand applyTo: containerComponent on: aCanvas.
-	^ containerComponent
-]
-
 { #category : #accessing }
 SemanticInput >> content [
 
@@ -59,8 +49,7 @@ SemanticInput >> initializeInterpretedBy: aTextCodec interactingThrough: anInter
 	textCodec := aTextCodec.
 	interactionInterpreter := anInteractionInterpreter.
 	currentInputIdentifier := ''.
-	componentCommand := CompositeComponentCommand
-		applyingAll: (Array with: self uiInputStyleCommand with: aComponentCommand).
+	componentCommand := self uiInputStyleCommand + aComponentCommand.
 	self setUninterpretedContentTo: ''
 ]
 
@@ -73,11 +62,7 @@ SemanticInput >> onTrigger [
 { #category : #rendering }
 SemanticInput >> renderContentOn: aCanvas [
 
-	| containerComponent |
-
-	containerComponent := self containerComponentOn: aCanvas.
-	containerComponent with:
-		[ self renderInputOn: aCanvas ]
+	aCanvas div with: [ self renderInputOn: aCanvas ] applying: componentCommand
 ]
 
 { #category : #'private - rendering' }
@@ -89,8 +74,8 @@ SemanticInput >> renderInputOn: aCanvas [
 	self assignIdentifierTo: input on: aCanvas.
 	input
 		value: self content;
-		callback: [ :string | self setUninterpretedContentTo: string ].
-	interactionInterpreter applyTo: input on: aCanvas
+		callback: [ :string | self setUninterpretedContentTo: string ];
+		interactUsing: interactionInterpreter
 ]
 
 { #category : #accessing }
