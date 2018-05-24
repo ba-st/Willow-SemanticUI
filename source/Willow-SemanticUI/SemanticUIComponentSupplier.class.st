@@ -242,7 +242,7 @@ SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aCom
 SemanticUIComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new
-		styledWith: SemanticStyle ui table;
+		apply: [ :table | table addClass semantic: [ :s | s ui table ] ];
 		yourself
 ]
 
