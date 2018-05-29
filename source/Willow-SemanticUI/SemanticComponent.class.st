@@ -41,11 +41,7 @@ SemanticComponent >> onTrigger [
 { #category : #rendering }
 SemanticComponent >> renderContentOn: aCanvas [
 
-	| container |
-
-	container := aCanvas div.
-	commandToContainer applyTo: container on: aCanvas.
-	container with: wrappedComponent
+	aCanvas div with: wrappedComponent applying: commandToContainer
 ]
 
 { #category : #testing }

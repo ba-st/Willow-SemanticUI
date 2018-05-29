@@ -38,12 +38,9 @@ SemanticButton >> onTrigger [
 { #category : #rendering }
 SemanticButton >> renderContentOn: aCanvas [
 
-	| component |
-
-	component := aCanvas button.
-	componentCommand applyTo: component on: aCanvas.
-	interactionInterpreter applyTo: component on: aCanvas.
-	component
+	aCanvas button
+		apply: componentCommand;
+		interactUsing: interactionInterpreter;
 		class: SemanticStyle ui button;
 		with: label
 ]

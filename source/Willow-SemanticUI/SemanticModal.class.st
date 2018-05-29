@@ -9,7 +9,10 @@ Class {
 		'footer',
 		'dialog'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#pools : [
+		'Willow'
+	],
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -26,7 +29,7 @@ SemanticModal class >> withHeader: aModalHeader content: aBodyView footer: aModa
 SemanticModal >> cleanModalFunctionsOn: canvas [
 
 	^ (canvas jQuery this remove
-		, ((canvas jQuery id: WillowConstants dialogSectionName) html: [ :aSubCanvas |  ]))
+		, ((canvas jQuery id: Constants >> #willow >> #dialogSectionName) html: [ :aSubCanvas |  ]))
 		asFunction
 ]
 

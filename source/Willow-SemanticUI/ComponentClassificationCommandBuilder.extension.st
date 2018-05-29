@@ -7,6 +7,5 @@ ComponentClassificationCommandBuilder >> semantic: aBlock [
 
 	style := SemanticStyle new.
 	aBlock value: style.
-	styleProviderBinding := Binding to: style.
-	^self commandStyledWith: styleProviderBinding content
+	^ ComponentClassificationCommand toStyleWith: style
 ]
