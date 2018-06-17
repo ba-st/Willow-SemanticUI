@@ -287,6 +287,12 @@ SemanticStyle >> floated [
 ]
 
 { #category : #general }
+SemanticStyle >> fluid [
+
+	cssClasses add: 'fluid'
+]
+
+{ #category : #general }
 SemanticStyle >> form [
 
 	cssClasses add: 'form'
