@@ -1,35 +1,37 @@
-![Logo](resources/logos/128x128.png) Willow-SemanticUI
-======
-[![Build Status](https://travis-ci.org/ba-st/Willow-SemanticUI.svg?branch=master)](https://travis-ci.org/ba-st/Willow-SemanticUI)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow-SemanticUI/badge.svg?branch=master)](https://coveralls.io/github/ba-st/Willow-SemanticUI?branch=master)
+<p align="center"><img src="assets/logos/128x128.png">
+ <h1 align="center">Willow-SemanticUI</h1>
+  <p align="center">
+    Willow-SemanticUI provides integration between <a href="https://github.com/ba-st/Willow">Willow</a> and <a href="https://semantic-ui.com/">SemanticUI</a>
+    <br>
+    <a href="docs/"><strong>Explore the docs »</strong></a>
+    <br>
+    <br>
+    <a href="https://github.com/ba-st/Willow-SemanticUI/issues/new?labels=Type%3A+Defect">Report a defect</a>
+    |
+    <a href="https://github.com/ba-st/Willow-SemanticUI/issues/new?labels=Type%3A+Feature">Request feature</a>
+  </p>
+</p>
+
+[![Build Status](https://travis-ci.org/ba-st/Willow-SemanticUI.svg?branch=release-candidate)](https://travis-ci.org/ba-st/Willow-SemanticUI)
+[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow-SemanticUI/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/Willow-SemanticUI?branch=release-candidate)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow-SemanticUI.svg)](https://david-dm.org/ba-st/Willow-SemanticUI)
 
-*Willow-SemanticUI provides integration between [Willow](https://github.com/ba-st/Willow) and [SemanticUI](https://semantic-ui.com/)*
+The project goal is to complement Willow with a component supplier that allows the creation of Semantic UI applications.
 
-## Goals
-- Complement Willow with a component supplier that allows the creation of Semantic UI applications
+## License
+- The code is licensed under [MIT](LICENSE).
+- The documentation is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
-### License:
-The project source code is [MIT](LICENSE) licensed. Any contribution submitted to the code repository is considered to be under the same license.
+## Quick Start
 
-The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
+- Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
+- Download a ready to use image from the [release page](https://github.com/ba-st/Willow-SemanticUI/releases/latest)
+- Explore the [documentation](docs/)
 
-### Highlights:
-- **Supported Platforms**: [Pharo 6.1 / Pharo 7](http://www.pharo.org/)
-- **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
+## Installation
 
-### Get started!
+To load the project in a Pharo image, or declare it as a dependency of your own project follow this [instructions](docs/Installation.md).
 
-#### Pharo 6.1./7
+## Contributing
 
-Open a Playground and evaluate:
-
-```smalltalk
-Metacello new
-  baseline: 'WillowSemanticUI';
-  repository: 'github://ba-st/Willow-SemanticUI:master/source';
-  load
-```
-
-### Contributing
-If you want to help check the ["How to contribute" doc](CONTRIBUTING.md).
+Check the [Contribution Guidelines](CONTRIBUTING.md)
