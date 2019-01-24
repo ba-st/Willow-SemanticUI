@@ -56,7 +56,7 @@ SemanticUIComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApply
 				withLegend: 'Its Title'
 				applying: [ :legend | legend beAutofocused ] ]
 		equals:
-			'<fieldset disabled="disabled"><legend autofocus="autofocus">Its Title</legend>The View</fieldset>'
+			'<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
 ]
 
 { #category : #'tests-Supplying' }
