@@ -1,6 +1,6 @@
 Class {
 	#name : #SemanticUIComponentSupplierTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : 'Willow-SemanticUI-Tests-Frontend'
 }
 
