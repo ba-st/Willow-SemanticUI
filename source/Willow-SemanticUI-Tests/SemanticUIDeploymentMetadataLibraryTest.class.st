@@ -1,6 +1,6 @@
 Class {
 	#name : #SemanticUIDeploymentMetadataLibraryTest,
-	#superclass : #WARenderingTest,
+	#superclass : #BWRenderingTest,
 	#category : 'Willow-SemanticUI-Tests-Libraries'
 }
 
