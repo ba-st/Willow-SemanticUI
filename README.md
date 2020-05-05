@@ -12,9 +12,12 @@
   </p>
 </p>
 
-[![Build Status](https://travis-ci.org/ba-st/Willow-SemanticUI.svg?branch=release-candidate)](https://travis-ci.org/ba-st/Willow-SemanticUI)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/Willow-SemanticUI/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/Willow-SemanticUI?branch=release-candidate)
+[![Build Status](https://github.com/ba-st/Willow-SemanticUI/workflows/Build/badge.svg?branch=release-candidate)](https://github.com/ba-st/Willow-Bootstrap/actions?query=workflow%3ABuild)
+[![Coverage Status](https://codecov.io/github/ba-st/Willow-SemanticUI/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/Willow-Bootstrap/branch/release-candidate)
 [![Javascript Dependency Status](https://david-dm.org/ba-st/Willow-SemanticUI.svg)](https://david-dm.org/ba-st/Willow-SemanticUI)
+[![Pharo 6.1](https://img.shields.io/badge/Pharo-6.1-informational)](https://pharo.org)
+[![Pharo 7.0](https://img.shields.io/badge/Pharo-7.0-informational)](https://pharo.org)
+[![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
 
 The project goal is to complement Willow with a component supplier that allows the creation of Semantic UI applications.
 
