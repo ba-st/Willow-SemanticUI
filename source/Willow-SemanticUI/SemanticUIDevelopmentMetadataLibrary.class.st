@@ -23,11 +23,12 @@ SemanticUIDevelopmentMetadataLibrary >> selectorsToInclude [
 
 { #category : #'uploaded metadata' }
 SemanticUIDevelopmentMetadataLibrary >> semanticCss [
+
 	^ WAFileLibraryResource
 		filepath: 'semantic.css'
-		mimeType: (WAMimeType main: 'text' sub: 'css')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #semanticCssContentWithLocalFonts)
+		mimeType: ( WAMimeType main: 'text' sub: 'css' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #semanticCssContentWithLocalFonts )
 ]
 
 { #category : #uploaded }
@@ -37171,12 +37172,7 @@ SemanticUIDevelopmentMetadataLibrary >> semanticJs [
 	^ WAFileLibraryResource
 		filepath: 'semantic.js'
 		mimeType: WAMimeType applicationJavascript
-		cacheDuration:
-			( Duration
-				days: 0
-				hours: 0
-				minutes: 30
-				seconds: 0 )
+		cacheDuration: self class defaultCacheDuration
 		contents: ( GRDelayedSend receiver: self selector: #semanticJsContent )
 ]
 
