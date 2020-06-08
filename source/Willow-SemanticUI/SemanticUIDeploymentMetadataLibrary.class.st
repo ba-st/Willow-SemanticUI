@@ -4,7 +4,7 @@ I'm a WALibary serving the files in source form, suitable for deployment
 Class {
 	#name : #SemanticUIDeploymentMetadataLibrary,
 	#superclass : #SemanticUIMetadataLibrary,
-	#category : 'Willow-SemanticUI-Libraries'
+	#category : #'Willow-SemanticUI-Libraries'
 }
 
 { #category : #accessing }
@@ -23,11 +23,12 @@ SemanticUIDeploymentMetadataLibrary >> selectorsToInclude [
 
 { #category : #'uploaded metadata' }
 SemanticUIDeploymentMetadataLibrary >> semanticminCss [
+
 	^ WAFileLibraryResource
 		filepath: 'semantic.min.css'
-		mimeType: (WAMimeType main: 'text' sub: 'css')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #semanticminCssContentWithLocalFonts)
+		mimeType: ( WAMimeType main: 'text' sub: 'css' )
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #semanticminCssContentWithLocalFonts )
 ]
 
 { #category : #uploaded }
@@ -408,11 +409,12 @@ SemanticUIDeploymentMetadataLibrary >> semanticminCssContentWithLocalFonts [
 
 { #category : #'uploaded metadata' }
 SemanticUIDeploymentMetadataLibrary >> semanticminJs [
+
 	^ WAFileLibraryResource
 		filepath: 'semantic.min.js'
-		mimeType: (WAMimeType main: 'application' sub: 'x-javascript')
-		cacheDuration: (Duration days: 0 hours: 0 minutes: 30 seconds: 0)
-		contents: (GRDelayedSend receiver: self selector: #semanticminJsContent)
+		mimeType: WAMimeType applicationJavascript
+		cacheDuration: self class defaultCacheDuration
+		contents: ( GRDelayedSend receiver: self selector: #semanticminJsContent )
 ]
 
 { #category : #uploaded }
