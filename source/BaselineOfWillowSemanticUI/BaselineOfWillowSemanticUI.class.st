@@ -31,10 +31,10 @@ BaselineOfWillowSemanticUI >> projectClass [
 BaselineOfWillowSemanticUI >> setUpDependencies: spec [
 
 	spec
-		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v13/source' ];
+		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v14/source' ];
 		project: 'Willow-Deployment' copyFrom: 'Willow' with: [ spec loads: 'Deployment' ];
 		project: 'Willow-SUnit' copyFrom: 'Willow' with: [ spec loads: 'Dependent-SUnit-Extensions' ];
-		project: 'Willow-Tests' copyFrom: 'Willow' with: [ spec loads: 'Tests' ];
+		project: 'Willow-Core-Tests' copyFrom: 'Willow' with: [ spec loads: 'Tests' ];
 		project: 'Willow-Tools' copyFrom: 'Willow' with: [ spec loads: 'Tools' ]
 ]
 
@@ -44,6 +44,7 @@ BaselineOfWillowSemanticUI >> setUpPackages: spec [
 	spec
 		package: 'Willow-SemanticUI' with: [ spec requires: #('Willow-Deployment') ];
 		group: 'Deployment' with: #('Willow-SemanticUI');
-		package: 'Willow-SemanticUI-Tests' with: [ spec requires: #('Willow-SemanticUI' 'Willow-Tests') ];
+		package: 'Willow-SemanticUI-Tests'
+			with: [ spec requires: #('Willow-SemanticUI' 'Willow-Core-Tests') ];
 		group: 'Tests' with: 'Willow-SemanticUI-Tests'
 ]
