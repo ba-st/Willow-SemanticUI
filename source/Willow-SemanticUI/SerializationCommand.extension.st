@@ -11,5 +11,5 @@ SerializationCommand class >> forRelatedDialogForm [
 					( ( aCanvas jQuery this closest: ( 'div.<1p>' expandMacrosWith: SemanticStyle for modal ) )
 						find: 'form' )
 			]
-		covering: #(forRelatedDialogForm forForm:)
+		covering: #(forRelatedDialogForm)
 ]
