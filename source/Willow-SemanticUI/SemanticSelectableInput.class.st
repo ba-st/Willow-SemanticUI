@@ -10,7 +10,7 @@ Class {
 		'componentCommand',
 		'defaultModel'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -44,8 +44,8 @@ SemanticSelectableInput >> initializeCheckboxView [
 		applying: self checkboxCommand.
 	checkboxView setCheckTo: true.
 	checkboxView onTrigger
-		toggleCssClass: SemanticStyle for disabled
-		onComponentsMatching: [ :canvas | canvas jQuery this parent next ]
+		updateCssClasses: [ :classes | classes toggleClass: SemanticStyle for disabled ]
+		onElementsMatching: [ :canvas | canvas jQuery this parent next ]
 ]
 
 { #category : #initialization }
