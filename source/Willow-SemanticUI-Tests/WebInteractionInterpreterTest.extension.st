@@ -5,7 +5,7 @@ WebInteractionInterpreterTest >> testSerializeRelatedDialogForm [
 
 	| interpreter html id |
 
-	interpreter := EventInterpreterDispatcher defaultingToChange.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self

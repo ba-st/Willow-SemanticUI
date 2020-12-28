@@ -8,7 +8,7 @@ Class {
 		'wrappedComponent',
 		'commandToContainer'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -33,9 +33,18 @@ SemanticComponent >> initializeWrapping: aComponent applying: aComponentCommand 
 ]
 
 { #category : #configuring }
+SemanticComponent >> on [
+
+	^ wrappedComponent on
+]
+
+{ #category : #configuring }
 SemanticComponent >> onTrigger [
 
-	^ wrappedComponent onTrigger
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #rendering }

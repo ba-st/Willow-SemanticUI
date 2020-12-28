@@ -5,7 +5,7 @@ CombinedWebInteractionInterpreterTest >> testSerializeRelatedDialogForm [
 
 	| interpreter html |
 
-	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
+	interpreter := self combinedInterpreter.
 
 	interpreter serializeRelatedDialogForm.
 	html := self
