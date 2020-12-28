@@ -5,14 +5,15 @@ CombinedWebInteractionInterpreterTest >> testSerializeRelatedDialogForm [
 
 	| interpreter html |
 
-	interpreter := CombinedWebInteractionInterpreter combiningInterpretersOf: self buttons.
+	interpreter := CombinedEventInterpreterDispatcher combiningInterpretersOfAll: self buttons.
 
 	interpreter serializeRelatedDialogForm.
 	html := self
 		renderUsing: [ :canvas | 
 			canvas
 				render: okButton;
-				render: cancelButton ].
+				render: cancelButton
+			].
 	self
 		assert: html
 		equals:

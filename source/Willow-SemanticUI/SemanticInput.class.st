@@ -11,7 +11,7 @@ Class {
 		'currentInputIdentifier',
 		'textCodec'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -54,9 +54,18 @@ SemanticInput >> initializeInterpretedBy: aTextCodec interactingThrough: anInter
 ]
 
 { #category : #configuring }
-SemanticInput >> onTrigger [
+SemanticInput >> on [
 
 	^ interactionInterpreter
+]
+
+{ #category : #configuring }
+SemanticInput >> onTrigger [
+
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #rendering }

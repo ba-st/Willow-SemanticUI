@@ -10,7 +10,7 @@ Class {
 		'isChecked',
 		'componentCommand'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -92,9 +92,18 @@ SemanticCheckbox >> isChecked [
 ]
 
 { #category : #configuring }
+SemanticCheckbox >> on [
+
+	^ interactionInterpreter
+]
+
+{ #category : #configuring }
 SemanticCheckbox >> onTrigger [
 
-	^interactionInterpreter
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #rendering }

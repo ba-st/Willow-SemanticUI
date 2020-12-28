@@ -9,7 +9,7 @@ Class {
 		'interactionInterpreter',
 		'componentCommand'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -56,9 +56,18 @@ SemanticDropdown >> initializeNamed: aName interactingThrough: anInteractionInte
 ]
 
 { #category : #configuring }
-SemanticDropdown >> onTrigger [
+SemanticDropdown >> on [
 
 	^ interactionInterpreter
+]
+
+{ #category : #configuring }
+SemanticDropdown >> onTrigger [
+
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #'private - rendering' }

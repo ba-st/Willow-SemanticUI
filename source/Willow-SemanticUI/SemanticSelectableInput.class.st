@@ -40,10 +40,10 @@ SemanticSelectableInput >> content [
 SemanticSelectableInput >> initializeCheckboxView [
 
 	checkboxView := SemanticCheckbox
-		unlabeledInteractingThrough: WebInteractionInterpreter forClickOnHiddenInputDependentComponent
+		unlabeledInteractingThrough: EventInterpreterDispatcher defaultingToClickHidden
 		applying: self checkboxCommand.
 	checkboxView setCheckTo: true.
-	checkboxView onTrigger
+	checkboxView on trigger
 		updateCssClasses: [ :classes | classes toggleClass: SemanticStyle for disabled ]
 		onElementsMatching: [ :canvas | canvas jQuery this parent next ]
 ]
@@ -58,10 +58,19 @@ SemanticSelectableInput >> initializeSelecting: anInputView defaultingTo: aDefau
 ]
 
 { #category : #configuring }
+SemanticSelectableInput >> on [
+
+	^ CombinedEventInterpreterDispatcher
+		combiningInterpretersOfAll: ( Array with: checkboxView with: inputView )
+]
+
+{ #category : #configuring }
 SemanticSelectableInput >> onTrigger [
 
-	^ CombinedWebInteractionInterpreter
-		combiningInterpretersOf: (Array with: checkboxView with: inputView)
+	self
+		deprecated: 'Use #on instead.'
+		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
+	^ self on trigger
 ]
 
 { #category : #rendering }
