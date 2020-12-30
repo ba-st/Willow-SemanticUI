@@ -156,7 +156,7 @@ SemanticUIComponentSupplier >> menuItemWith: aContentBlock [
 { #category : #Supplying }
 SemanticUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView multiLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
@@ -220,7 +220,7 @@ SemanticUIComponentSupplier >> simpleInput [
 { #category : #Supplying }
 SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
