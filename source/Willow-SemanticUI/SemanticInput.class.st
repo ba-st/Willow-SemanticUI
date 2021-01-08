@@ -26,7 +26,7 @@ SemanticInput class >> interpretedBy: aTextCodec interactingThrough: anInteracti
 { #category : #'private - rendering' }
 SemanticInput >> assignIdentifierTo: anInput on: aCanvas [
 
-	currentInputIdentifier := (IdentifierAssigner prefixedBy: 'input') identifyIn: aCanvas.
+	currentInputIdentifier := (IdentifierAssigner prefixedBy: 'input') identifierOn: aCanvas.
 
 	anInput id: currentInputIdentifier
 ]
@@ -38,7 +38,7 @@ SemanticInput >> content [
 ]
 
 { #category : #accessing }
-SemanticInput >> identifier [
+SemanticInput >> identifierOn: aCanvas [
 
 	^ currentInputIdentifier
 ]

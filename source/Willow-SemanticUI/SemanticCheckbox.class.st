@@ -51,7 +51,7 @@ SemanticCheckbox >> configureNameOf: anInput on: aCanvas [
 
 	| componentName |
 
-	componentName := (IdentifierAssigner prefixedBy: 'checkbox') identifyIn: aCanvas.
+	componentName := (IdentifierAssigner prefixedBy: 'checkbox') identifierOn: aCanvas.
 	anInput name: componentName
 ]
 
@@ -116,7 +116,8 @@ SemanticCheckbox >> renderContentOn: aCanvas [
 		with: [ | input |
 
 			input := self inputRenderedOn: aCanvas.
-			self renderLabelFor: input identifier on: aCanvas ]
+			self renderLabelFor: ( input identifierOn: aCanvas ) on: aCanvas
+			]
 ]
 
 { #category : #'private - rendering' }

@@ -10,7 +10,7 @@ Class {
 		'dialogCommand',
 		'footerButtons'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #configuring }
@@ -40,9 +40,10 @@ SemanticModalBuilder >> confirmWith: aString [
 
 	self
 		addFooterButton:
-			(GenericContainerWebView
+			( ContainerWebView
 				wrapping: aString
-				applying: [ :button | button addClass semantic: [ :style | style ui primary approve button ] ])
+				intoElementBuiltUsing: [ :theCanvas | theCanvas div ]
+				applying: [ :button | button addClass semantic: [ :style | style ui primary approve button ] ] )
 ]
 
 { #category : #configuring }

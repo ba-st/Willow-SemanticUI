@@ -49,10 +49,10 @@ SemanticModal >> initializeWithHeader: aModalHeader content: aBodyView footer: a
 
 	header := aModalHeader.
 	footer := aModalFooter.
-	dialog := GenericContainerWebView
-		wrapping: (self contentWrapping: aBodyView)
+	dialog := self componentSupplier
+		divisionContainerWrapping: ( self contentWrapping: aBodyView )
 		applying:
-			[ :container | (self styleCommandFor: container) + (self modalScriptCommandFor: container) + aDialogCommand ]
+			[ :container | ( self styleCommandFor: container ) + ( self modalScriptCommandFor: container ) + aDialogCommand ]
 ]
 
 { #category : #'private - accessing' }

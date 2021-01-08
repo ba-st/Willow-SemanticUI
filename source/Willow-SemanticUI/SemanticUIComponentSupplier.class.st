@@ -211,10 +211,8 @@ SemanticUIComponentSupplier >> simpleInput [
 
 	^ SemanticInput
 		interpretedBy: NullCodec new
-		interactingThrough:
-			(WebInteractionInterpreter
-				workingWith: WebComponentInteraction neverTriggered)
-		applying: [:theInput | ]
+		interactingThrough: ( WebInteractionInterpreter workingWith: WebComponentInteraction neverTriggered )
+		applying: [ :theInput |  ]
 ]
 
 { #category : #Supplying }
