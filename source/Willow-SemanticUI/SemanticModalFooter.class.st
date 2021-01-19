@@ -28,15 +28,6 @@ SemanticModalFooter >> on [
 	^ CombinedEventInterpreterDispatcher combiningInterpretersOfAll: buttons
 ]
 
-{ #category : #configuring }
-SemanticModalFooter >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticModalFooter >> renderContentOn: aCanvas [
 

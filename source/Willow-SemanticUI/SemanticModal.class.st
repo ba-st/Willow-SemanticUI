@@ -78,15 +78,6 @@ SemanticModal >> on [
 	^ footer on
 ]
 
-{ #category : #configuring }
-SemanticModal >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticModal >> renderContentOn: aCanvas [
 

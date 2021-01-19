@@ -97,15 +97,6 @@ SemanticCheckbox >> on [
 	^ interactionInterpreter
 ]
 
-{ #category : #configuring }
-SemanticCheckbox >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticCheckbox >> renderContentOn: aCanvas [
 

@@ -64,15 +64,6 @@ SemanticSelectableInput >> on [
 		combiningInterpretersOfAll: ( Array with: checkboxView with: inputView )
 ]
 
-{ #category : #configuring }
-SemanticSelectableInput >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticSelectableInput >> renderContentOn: aCanvas [
 

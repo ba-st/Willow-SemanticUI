@@ -61,15 +61,6 @@ SemanticDropdown >> on [
 	^ interactionInterpreter
 ]
 
-{ #category : #configuring }
-SemanticDropdown >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #'private - rendering' }
 SemanticDropdown >> render: option asOptionAt: index on: aCanvas [
 

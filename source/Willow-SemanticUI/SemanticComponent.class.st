@@ -38,15 +38,6 @@ SemanticComponent >> on [
 	^ wrappedComponent on
 ]
 
-{ #category : #configuring }
-SemanticComponent >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticComponent >> renderContentOn: aCanvas [
 

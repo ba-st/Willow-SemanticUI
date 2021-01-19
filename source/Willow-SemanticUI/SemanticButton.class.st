@@ -35,15 +35,6 @@ SemanticButton >> on [
 	^ interactionInterpreter
 ]
 
-{ #category : #configuring }
-SemanticButton >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticButton >> renderContentOn: aCanvas [
 

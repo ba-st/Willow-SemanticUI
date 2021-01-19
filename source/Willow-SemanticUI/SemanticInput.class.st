@@ -59,15 +59,6 @@ SemanticInput >> on [
 	^ interactionInterpreter
 ]
 
-{ #category : #configuring }
-SemanticInput >> onTrigger [
-
-	self
-		deprecated: 'Use #on instead.'
-		transformWith: '`@receiver onTrigger' -> '`@receiver on trigger'.
-	^ self on trigger
-]
-
 { #category : #rendering }
 SemanticInput >> renderContentOn: aCanvas [
 
