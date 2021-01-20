@@ -46,15 +46,6 @@ SemanticCheckbox class >> unlabeledInteractingThrough: anInteractionInterpreter 
 		applying: aComponentCommand
 ]
 
-{ #category : #'private - configuring' }
-SemanticCheckbox >> configureNameOf: anInput on: aCanvas [
-
-	| componentName |
-
-	componentName := (IdentifierAssigner prefixedBy: 'checkbox') identifierOn: aCanvas.
-	anInput name: componentName
-]
-
 { #category : #'private - accessing' }
 SemanticCheckbox >> containerComponentOn: aCanvas [
 

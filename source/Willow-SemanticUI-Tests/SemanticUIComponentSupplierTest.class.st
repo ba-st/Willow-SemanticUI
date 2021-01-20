@@ -92,6 +92,23 @@ SemanticUIComponentSupplierTest >> testDropdownListApplying [
 			'<select name="1" id="id2" class="willow"></select><script type="text/javascript">$("#id2").dropdown();$("#id2").change(function(event){alert("Triggered!")});</script>'
 ]
 
+{ #category : #'tests-Supplying - Non Portable' }
+SemanticUIComponentSupplierTest >> testDropdownListNamedApplying [
+
+	self
+		assertRenderingOf: [ :supplier | 
+			| list |
+
+			list := supplier
+				dropdownListNamed: 'The name'
+				applying: [ :dropdownList | dropdownList addClass willow ].
+			list on trigger inform: 'Triggered!'.
+			list
+			]
+		equals:
+			'<div class="item willow ui selection dropdown item" id="id1"><input name="2" id="input-id3" type="hidden"/><i class="dropdown icon"></i><div class="default text">The name</div><div class="menu"></div></div><script type="text/javascript">$("#id1").dropdown();$("#input-id3").change(function(event){alert("Triggered!")});</script>'
+]
+
 { #category : #'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplying [
 
