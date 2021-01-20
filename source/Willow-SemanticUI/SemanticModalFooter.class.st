@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'buttons'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -23,9 +23,9 @@ SemanticModalFooter >> initializeContaining: aButtonCollection [
 ]
 
 { #category : #configuring }
-SemanticModalFooter >> onTrigger [
+SemanticModalFooter >> on [
 
-	^ CombinedWebInteractionInterpreter combiningInterpretersOf: buttons
+	^ CombinedEventInterpreterDispatcher combiningInterpretersOfAll: buttons
 ]
 
 { #category : #rendering }

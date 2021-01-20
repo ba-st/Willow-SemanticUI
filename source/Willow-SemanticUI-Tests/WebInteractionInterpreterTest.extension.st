@@ -5,7 +5,7 @@ WebInteractionInterpreterTest >> testSerializeRelatedDialogForm [
 
 	| interpreter html id |
 
-	interpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interpreter := self changeInterpreter.
 	id := '15'.
 
 	html := self
@@ -15,7 +15,8 @@ WebInteractionInterpreterTest >> testSerializeRelatedDialogForm [
 			textInput := canvas textInput.
 			textInput id: id.
 			interpreter serializeRelatedDialogForm.
-			interpreter applyTo: textInput on: canvas ].
+			interpreter applyTo: textInput on: canvas
+			].
 
 	self
 		assert: html

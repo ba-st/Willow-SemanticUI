@@ -9,9 +9,10 @@ Class {
 		'interactionInterpreter',
 		'content',
 		'currentInputIdentifier',
-		'textCodec'
+		'textCodec',
+		'identifierAssigner'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -23,24 +24,10 @@ SemanticInput class >> interpretedBy: aTextCodec interactingThrough: anInteracti
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'private - rendering' }
-SemanticInput >> assignIdentifierTo: anInput on: aCanvas [
-
-	currentInputIdentifier := (IdentifierAssigner prefixedBy: 'input') identifyIn: aCanvas.
-
-	anInput id: currentInputIdentifier
-]
-
 { #category : #accessing }
 SemanticInput >> content [
 
 	^ textCodec decode: content
-]
-
-{ #category : #accessing }
-SemanticInput >> identifier [
-
-	^ currentInputIdentifier
 ]
 
 { #category : #initialization }
@@ -48,13 +35,13 @@ SemanticInput >> initializeInterpretedBy: aTextCodec interactingThrough: anInter
 
 	textCodec := aTextCodec.
 	interactionInterpreter := anInteractionInterpreter.
-	currentInputIdentifier := ''.
+	identifierAssigner := IdentifierAssigner prefixedBy: 'input'.
 	componentCommand := self uiInputStyleCommand + aComponentCommand.
 	self setUninterpretedContentTo: ''
 ]
 
 { #category : #configuring }
-SemanticInput >> onTrigger [
+SemanticInput >> on [
 
 	^ interactionInterpreter
 ]
@@ -71,8 +58,8 @@ SemanticInput >> renderInputOn: aCanvas [
 	| input |
 
 	input := aCanvas textInput.
-	self assignIdentifierTo: input on: aCanvas.
 	input
+		beIdentifiableUsing: identifierAssigner;
 		value: self content;
 		callback: [ :string | self setUninterpretedContentTo: string ];
 		interactUsing: interactionInterpreter

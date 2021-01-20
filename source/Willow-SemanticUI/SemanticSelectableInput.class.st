@@ -10,7 +10,7 @@ Class {
 		'componentCommand',
 		'defaultModel'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -40,12 +40,12 @@ SemanticSelectableInput >> content [
 SemanticSelectableInput >> initializeCheckboxView [
 
 	checkboxView := SemanticCheckbox
-		unlabeledInteractingThrough: WebInteractionInterpreter forClickOnHiddenInputDependentComponent
+		unlabeledInteractingThrough: EventInterpreterDispatcher defaultingToClickHidden
 		applying: self checkboxCommand.
 	checkboxView setCheckTo: true.
-	checkboxView onTrigger
-		toggleCssClass: SemanticStyle for disabled
-		onComponentsMatching: [ :canvas | canvas jQuery this parent next ]
+	checkboxView on trigger
+		updateCssClasses: [ :classes | classes toggleClass: SemanticStyle for disabled ]
+		onElementsMatching: [ :canvas | canvas jQuery this parent next ]
 ]
 
 { #category : #initialization }
@@ -58,10 +58,10 @@ SemanticSelectableInput >> initializeSelecting: anInputView defaultingTo: aDefau
 ]
 
 { #category : #configuring }
-SemanticSelectableInput >> onTrigger [
+SemanticSelectableInput >> on [
 
-	^ CombinedWebInteractionInterpreter
-		combiningInterpretersOf: (Array with: checkboxView with: inputView)
+	^ CombinedEventInterpreterDispatcher
+		combiningInterpretersOfAll: ( Array with: checkboxView with: inputView )
 ]
 
 { #category : #rendering }

@@ -3,14 +3,14 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'WillowSemanticUI',
       #directory : 'source',
-      #load : [ 'CI' ],
+      #load : [ 'Tests' ],
       #platforms : [  #pharo ]
     }
   ],
   #testing : {
     #coverage : {
-       #packages : [ 'Willow-SemanticUI*' ],
+      #packages : [ 'Willow-SemanticUI*' ],
       #format: #lcov
     }
-  }
+  }   
 }

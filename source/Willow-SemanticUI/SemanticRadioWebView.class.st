@@ -10,7 +10,7 @@ Class {
 		'identifierAssigner',
 		'inputCommand'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -28,12 +28,12 @@ SemanticRadioWebView >> initializeRenderingWith: aRenderingBlock applying: anInp
 	renderingBlock := aRenderingBlock.
 	inputCommand := anInputCommand.
 
-	interactionInterpreter := WebInteractionInterpreter forChangeInComponentValue.
+	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'radio-button'
 ]
 
 { #category : #configuring }
-SemanticRadioWebView >> onTrigger [
+SemanticRadioWebView >> on [
 
 	^ interactionInterpreter
 ]
@@ -68,8 +68,8 @@ SemanticRadioWebView >> renderInputFor: anElement asPartOf: aRadioGroup on: aCan
 	| radioButton |
 
 	radioButton := aRadioGroup radioButton.
-	identifierAssigner withAssignedIdentifierDo: [ :id | radioButton id: id ].
 	radioButton
+		beIdentifiableUsing: identifierAssigner;
 		apply: inputCommand;
 		interactUsing: interactionInterpreter;
 		value: anElement.

@@ -10,7 +10,7 @@ Class {
 		'isChecked',
 		'componentCommand'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -44,15 +44,6 @@ SemanticCheckbox class >> unlabeledInteractingThrough: anInteractionInterpreter 
 		labeledWithContentOf: self noLabelHolder
 		interactingThrough: anInteractionInterpreter
 		applying: aComponentCommand
-]
-
-{ #category : #'private - configuring' }
-SemanticCheckbox >> configureNameOf: anInput on: aCanvas [
-
-	| componentName |
-
-	componentName := (IdentifierAssigner prefixedBy: 'checkbox') identifyIn: aCanvas.
-	anInput name: componentName
 ]
 
 { #category : #'private - accessing' }
@@ -92,9 +83,9 @@ SemanticCheckbox >> isChecked [
 ]
 
 { #category : #configuring }
-SemanticCheckbox >> onTrigger [
+SemanticCheckbox >> on [
 
-	^interactionInterpreter
+	^ interactionInterpreter
 ]
 
 { #category : #rendering }
@@ -107,7 +98,8 @@ SemanticCheckbox >> renderContentOn: aCanvas [
 		with: [ | input |
 
 			input := self inputRenderedOn: aCanvas.
-			self renderLabelFor: input identifier on: aCanvas ]
+			self renderLabelFor: ( input identifierOn: aCanvas ) on: aCanvas
+			]
 ]
 
 { #category : #'private - rendering' }

@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'semanticUILibraries'
 	],
-	#category : 'Willow-SemanticUI-Frontend'
+	#category : #'Willow-SemanticUI-Frontend'
 }
 
 { #category : #'instance creation' }
@@ -86,9 +86,8 @@ SemanticUIComponentSupplier >> dropdownListNamed: aName applying: aComponentComm
 
 	^ SemanticDropdown
 		named: aName
-		interactingThrough: WebInteractionInterpreter forChangeInComponentValue
-		applying:
-			[ :theDropdown | (theDropdown addClass semantic: [ :style | style item ]) + aComponentCommand ]
+		interactingThrough: EventInterpreterDispatcher defaultingToChange
+		applying: [ :theDropdown | ( theDropdown addClass semantic: [ :style | style item ] ) + aComponentCommand ]
 ]
 
 { #category : #Supplying }
@@ -112,8 +111,8 @@ SemanticUIComponentSupplier >> interactiveButtonDescribedBy: aString [
 
 	^ SemanticButton
 		labeled: aString
-		interactingThrough: WebInteractionInterpreter forClickOnComponent
-		applying: [:theButton | ]
+		interactingThrough: EventInterpreterDispatcher defaultingToClick
+		applying: [ :theButton |  ]
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -121,7 +120,7 @@ SemanticUIComponentSupplier >> interactiveCheckBoxDescribedBy: aDescription [
 
 	^ SemanticCheckbox
 		labeled: aDescription
-		interactingThrough: WebInteractionInterpreter forClickOnHiddenInputDependentComponent
+		interactingThrough: EventInterpreterDispatcher defaultingToClickHidden
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -129,8 +128,8 @@ SemanticUIComponentSupplier >> interactiveInputItemNamed: aName interpretedBy: a
 
 	^ SemanticInput
 		interpretedBy: aTextCodec
-		interactingThrough: WebInteractionInterpreter forChangeInComponentValue
-		applying: (SemanticPopup toDisplay: aName)
+		interactingThrough: EventInterpreterDispatcher defaultingToChange
+		applying: ( SemanticPopup toDisplay: aName )
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -157,7 +156,7 @@ SemanticUIComponentSupplier >> menuItemWith: aContentBlock [
 { #category : #Supplying }
 SemanticUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView multiLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }
@@ -212,16 +211,14 @@ SemanticUIComponentSupplier >> simpleInput [
 
 	^ SemanticInput
 		interpretedBy: NullCodec new
-		interactingThrough:
-			(WebInteractionInterpreter
-				workingWith: WebComponentInteraction neverTriggered)
-		applying: [:theInput | ]
+		interactingThrough: ( WebInteractionInterpreter workingWith: WebComponentInteraction neverTriggered )
+		applying: [ :theInput |  ]
 ]
 
 { #category : #Supplying }
 SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
-	^ TextFieldWebView singleLineTriggeringOnChangeApplying: aComponentCommand
+	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
 { #category : #Supplying }

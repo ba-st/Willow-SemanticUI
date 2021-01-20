@@ -9,7 +9,7 @@ Class {
 		'componentCommand',
 		'label'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : #'Willow-SemanticUI-WebViews'
 }
 
 { #category : #'instance creation' }
@@ -21,7 +21,7 @@ SemanticButton class >> labeled: aLabel interactingThrough: anInteractionInterpr
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 SemanticButton >> initializeLabeled: aLabel interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	label := aLabel.
@@ -30,7 +30,7 @@ SemanticButton >> initializeLabeled: aLabel interactingThrough: anInteractionInt
 ]
 
 { #category : #configuring }
-SemanticButton >> onTrigger [
+SemanticButton >> on [
 
 	^ interactionInterpreter
 ]
