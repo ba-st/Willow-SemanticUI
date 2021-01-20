@@ -168,7 +168,7 @@ SemanticUIComponentSupplierTest >> testInteractiveSelectableInputItemNamedInterp
 			view
 			]
 		equals:
-			'<div class="item"><div class="ui checkbox toggle fitted"><input checked name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><label></label></div><div class="ui input" data-content="The label" id="id4"><input id="input-id5" value="0" name="6" type="text"/></div></div><script type="text/javascript">$("#input-id2").click(function(event){$(this).parent().next().toggleClass("disabled");alert("Triggered!")});$("#id4").popup({"inline":true});$("#input-id5").change(function(event){alert("Triggered!")});</script>'
+			'<div class="item"><div class="ui checkbox toggle fitted"><input checked name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><label></label></div><div class="ui input" data-content="The label" id="id4"><input value="0" name="5" id="input-id6" type="text"/></div></div><script type="text/javascript">$("#input-id2").click(function(event){$(this).parent().next().toggleClass("disabled");alert("Triggered!")});$("#id4").popup({"inline":true});$("#input-id6").change(function(event){alert("Triggered!")});</script>'
 ]
 
 { #category : #'tests-Supplying' }
@@ -219,7 +219,7 @@ SemanticUIComponentSupplierTest >> testSimpleInput [
 
 	self
 		assertRenderingOf: [ :supplier | supplier simpleInput ]
-		equals: '<div class="ui input"><input id="input-id1" value="" name="2" type="text"/></div>'
+		equals: '<div class="ui input"><input value="" name="1" type="text"/></div>'
 ]
 
 { #category : #'tests-Supplying' }
