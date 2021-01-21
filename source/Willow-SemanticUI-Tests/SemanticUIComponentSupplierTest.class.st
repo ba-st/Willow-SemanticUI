@@ -89,7 +89,7 @@ SemanticUIComponentSupplierTest >> testDropdownListApplying [
 			list
 			]
 		equals:
-			'<select name="1" id="id2" class="willow"></select><script type="text/javascript">$("#id2").dropdown();$("#id2").change(function(event){alert("Triggered!")});</script>'
+			'<select name="1" id="select-id2" class="willow"></select><script type="text/javascript">$("#select-id2").change(function(event){alert("Triggered!")});$("#select-id2").dropdown();</script>'
 ]
 
 { #category : #'tests-Supplying - Non Portable' }

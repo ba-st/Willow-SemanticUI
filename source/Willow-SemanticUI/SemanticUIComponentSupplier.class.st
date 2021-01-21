@@ -76,9 +76,10 @@ SemanticUIComponentSupplier >> dialogBuilder [
 { #category : #Supplying }
 SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand [
 
-	^ DropDownListWebView
-		applying:
-			[ :view | (view addScript js: [ :canvas | canvas jQuery this call: 'dropdown' ]) + aComponentCommand ]
+	^ SingleSelectionWebView
+		dropDownListApplying: [ :view | 
+			(view addScript js: [ :canvas | canvas jQuery this call: 'dropdown' ])
+				+ aComponentCommand ]
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -223,9 +224,9 @@ SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
 { #category : #Supplying }
 SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
-
-	^ SingleSelectionListBoxWebView
-		displayingAtOnce: aNumberOfElements
+	
+	^ SingleSelectionWebView
+		listBoxDisplayingAtOnce: aNumberOfElements
 		applying: aComponentCommand
 ]
 
