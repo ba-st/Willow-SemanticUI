@@ -74,12 +74,13 @@ SemanticUIComponentSupplier >> dialogBuilder [
 ]
 
 { #category : #Supplying }
-SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand [
+SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
 		dropDownListApplying: [ :view | 
 			(view addScript js: [ :canvas | canvas jQuery this call: 'dropdown' ])
 				+ aComponentCommand ]
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -223,11 +224,12 @@ SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 ]
 
 { #category : #Supplying }
-SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
-	
+SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
+
 	^ SingleSelectionWebView
 		listBoxDisplayingAtOnce: aNumberOfElements
 		applying: aComponentCommand
+		applyingToOptions: anOptionCommand
 ]
 
 { #category : #'Supplying - Non Portable' }
