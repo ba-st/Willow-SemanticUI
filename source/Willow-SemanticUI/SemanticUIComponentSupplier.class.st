@@ -88,7 +88,7 @@ SemanticUIComponentSupplier >> dropdownListNamed: aName applying: aComponentComm
 
 	^ SemanticDropdown
 		named: aName
-		interactingThrough: EventInterpreterDispatcher defaultingToChange
+		interactingThrough: SingleEventInterpreterDispatcher defaultingToChange
 		applying: [ :theDropdown | ( theDropdown addClass semantic: [ :style | style item ] ) + aComponentCommand ]
 ]
 
@@ -113,7 +113,7 @@ SemanticUIComponentSupplier >> interactiveButtonDescribedBy: aString [
 
 	^ SemanticButton
 		labeled: aString
-		interactingThrough: EventInterpreterDispatcher defaultingToClick
+		interactingThrough: SingleEventInterpreterDispatcher defaultingToClick
 		applying: [ :theButton |  ]
 ]
 
@@ -122,7 +122,7 @@ SemanticUIComponentSupplier >> interactiveCheckBoxDescribedBy: aDescription [
 
 	^ SemanticCheckbox
 		labeled: aDescription
-		interactingThrough: EventInterpreterDispatcher defaultingToClickHidden
+		interactingThrough: SingleEventInterpreterDispatcher defaultingToClickHidden
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -130,7 +130,7 @@ SemanticUIComponentSupplier >> interactiveInputItemNamed: aName interpretedBy: a
 
 	^ SemanticInput
 		interpretedBy: aTextCodec
-		interactingThrough: EventInterpreterDispatcher defaultingToChange
+		interactingThrough: SingleEventInterpreterDispatcher defaultingToChange
 		applying: ( SemanticPopup toDisplay: aName )
 ]
 
