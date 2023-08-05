@@ -232,6 +232,16 @@ SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOf
 		applyingToOptions: anOptionCommand
 ]
 
+{ #category : #Supplying }
+SemanticUIComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aComponentCommand evaluating: anActionBlock [
+
+	^ SynchronicSubmitButtonWebView
+		  labeled: aRenderable
+		  applying: [ :theButton |
+		  ( theButton addClass semantic: [ :style | style ui button ] ) + aComponentCommand ]
+		  evaluating: anActionBlock
+]
+
 { #category : #'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
 

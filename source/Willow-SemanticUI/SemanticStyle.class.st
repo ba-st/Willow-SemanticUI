@@ -52,6 +52,12 @@ SemanticStyle >> approve [
 	cssClasses add: 'approve'
 ]
 
+{ #category : #cards }
+SemanticStyle >> attached [
+
+	cssClasses add: 'attached'
+]
+
 { #category : #general }
 SemanticStyle >> author [
 
@@ -82,7 +88,7 @@ SemanticStyle >> borderless [
 	cssClasses add: 'borderless'
 ]
 
-{ #category : #menu }
+{ #category : #cards }
 SemanticStyle >> bottom [
 
 	cssClasses add: 'bottom'
@@ -152,6 +158,12 @@ SemanticStyle >> comment [
 SemanticStyle >> comments [
 
 	cssClasses add: 'comments'
+]
+
+{ #category : #general }
+SemanticStyle >> compact [
+
+	cssClasses add: 'compact'
 ]
 
 { #category : #container }
@@ -566,6 +578,12 @@ SemanticStyle >> selection [
 SemanticStyle >> seven [
 
 	cssClasses add: 'seven'
+]
+
+{ #category : #icons }
+SemanticStyle >> signOut [
+
+	cssClasses add: 'sign-out'
 ]
 
 { #category : #numbers }
