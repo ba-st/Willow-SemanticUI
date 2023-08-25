@@ -46,6 +46,12 @@ SemanticStyle >> aligned [
 	cssClasses add: 'aligned'
 ]
 
+{ #category : #icons }
+SemanticStyle >> alternate [
+
+	cssClasses add: 'alternate'
+]
+
 { #category : #color }
 SemanticStyle >> approve [
 
@@ -142,6 +148,12 @@ SemanticStyle >> close [
 	cssClasses add: 'close'
 ]
 
+{ #category : #icons }
+SemanticStyle >> cloud [
+
+	cssClasses add: 'cloud'
+]
+
 { #category : #table }
 SemanticStyle >> column [
 
@@ -224,6 +236,12 @@ SemanticStyle >> dividing [
 SemanticStyle >> doubling [
 
 	cssClasses add: 'doubling'
+]
+
+{ #category : #icons }
+SemanticStyle >> download [
+
+	cssClasses add: 'download'
 ]
 
 { #category : #general }
@@ -352,6 +370,12 @@ SemanticStyle >> image [
 	cssClasses add: 'image'
 ]
 
+{ #category : #general }
+SemanticStyle >> info [
+
+	cssClasses add: 'info'
+]
+
 { #category : #initialization }
 SemanticStyle >> initialize [
 
@@ -466,6 +490,12 @@ SemanticStyle >> modal [
 	cssClasses add: 'modal'
 ]
 
+{ #category : #general }
+SemanticStyle >> negative [
+
+	cssClasses add: 'negative'
+]
+
 { #category : #color }
 SemanticStyle >> ok [
 
@@ -490,10 +520,22 @@ SemanticStyle >> orange [
 	cssClasses add: 'orange'
 ]
 
+{ #category : #icons }
+SemanticStyle >> outline [
+
+	cssClasses add: 'outline'
+]
+
 { #category : #general }
 SemanticStyle >> pointing [
 
 	cssClasses add: 'pointing'
+]
+
+{ #category : #general }
+SemanticStyle >> positive [
+
+	cssClasses add: 'positive'
 ]
 
 { #category : #general }
@@ -617,6 +659,12 @@ SemanticStyle >> striped [
 ]
 
 { #category : #general }
+SemanticStyle >> sub [
+
+	cssClasses add: 'sub'
+]
+
+{ #category : #general }
 SemanticStyle >> submit [
 
 	cssClasses add: 'submit'
@@ -670,6 +718,12 @@ SemanticStyle >> top [
 	cssClasses add: 'top'
 ]
 
+{ #category : #icons }
+SemanticStyle >> trash [
+
+	cssClasses add: 'trash'
+]
+
 { #category : #numbers }
 SemanticStyle >> two [
 
@@ -680,6 +734,12 @@ SemanticStyle >> two [
 SemanticStyle >> ui [
 
 	cssClasses add: 'ui'
+]
+
+{ #category : #icons }
+SemanticStyle >> upload [
+
+	cssClasses add: 'upload'
 ]
 
 { #category : #positioning }

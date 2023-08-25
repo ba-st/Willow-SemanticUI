@@ -38,9 +38,9 @@ SemanticUIComponentSupplier >> activeElementStyle [
 SemanticUIComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
 	^ AsynchronicButtonWebView
-		labeled: aRenderable
-		applying:
-			[ :theButton | (theButton addClass semantic: [ :style | style ui button ]) + aComponentCommand ]
+		  labeled: aRenderable
+		  applying: [ :theButton |
+		  ( theButton addClass semantic: [ :style | style ui button ] ) + aComponentCommand ]
 ]
 
 { #category : #Supplying }
@@ -77,10 +77,9 @@ SemanticUIComponentSupplier >> dialogBuilder [
 SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
-		dropDownListApplying: [ :view | 
-			(view addScript js: [ :canvas | canvas jQuery this call: 'dropdown' ])
-				+ aComponentCommand ]
-		applyingToOptions: anOptionCommand
+		  dropDownListApplying: [ :view |
+			  ( view addScript js: [ :canvas | canvas jQuery this call: 'dropdown' ] ) + aComponentCommand ]
+		  applyingToOptions: anOptionCommand
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -167,12 +166,12 @@ SemanticUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 	| field |
 
 	field := NumberFieldWebView
-		applying: [ :theField | theField boundNotNegative + aComponentCommand ]
-		transformingWith: NaturalNumberCodec new.
+		         applying: [ :theField | theField boundNotNegative + aComponentCommand ]
+		         transformingWith: NaturalNumberCodec new.
 
 	^ SemanticComponent
-		wrapping: field
-		applying: [ :container | container addClass semantic: [ :style | style ui input ] ]
+		  wrapping: field
+		  applying: [ :container | container addClass semantic: [ :style | style ui input ] ]
 ]
 
 { #category : #Supplying }
@@ -180,14 +179,14 @@ SemanticUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLab
 
 	| radio |
 
-	radio := SemanticRadioWebView 
-				renderingWith: aRenderingBlock 
-				applyingToLabel: aLabelCommand
-				applyingToInput: anInputCommand.
+	radio := SemanticRadioWebView
+		         renderingWith: aRenderingBlock
+		         applyingToLabel: aLabelCommand
+		         applyingToInput: anInputCommand.
 
 	^ SemanticComponent
-		wrapping: radio
-		applying: [ :container | container addClass semantic: [ :style | style inline fields ] ]
+		  wrapping: radio
+		  applying: [ :container | container addClass semantic: [ :style | style inline fields ] ]
 ]
 
 { #category : #'Supplying - Non Portable' }
@@ -227,9 +226,9 @@ SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
-		listBoxDisplayingAtOnce: aNumberOfElements
-		applying: aComponentCommand
-		applyingToOptions: anOptionCommand
+		  listBoxDisplayingAtOnce: aNumberOfElements
+		  applying: aComponentCommand
+		  applyingToOptions: anOptionCommand
 ]
 
 { #category : #Supplying }
@@ -252,8 +251,8 @@ SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aCom
 SemanticUIComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new
-		apply: [ :table | table addClass semantic: [ :s | s ui table ] ];
-		yourself
+		  apply: [ :table | table addClass semantic: [ :s | s ui table ] ];
+		  yourself
 ]
 
 { #category : #'Supplying - Non Portable' }
