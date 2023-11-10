@@ -580,7 +580,7 @@ SemanticStyle >> rounded [
 	cssClasses add: 'rounded'
 ]
 
-{ #category : #'instance creation' }
+{ #category : #table }
 SemanticStyle >> row [
 
 	cssClasses add: 'row'
