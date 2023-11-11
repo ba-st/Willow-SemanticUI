@@ -242,6 +242,40 @@ SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApp
 		equals: '<select name="1" size="15" class="willow"></select>'
 ]
 
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating [
+
+	self
+		assertRenderingOf: [ :supplier |
+			supplier
+				synchronicButtonLabeled: 'Search'
+				applying: [ :button | button addClass willow ]
+				evaluating: [ self fail ]
+			]
+		equals: '<button name="1" class="ui button willow" type="submit">Search</button>'
+]
+
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testTableBuilderForHeadlessTable [
+
+	self
+		assertRenderingOf: [ :supplier |
+			| table |
+
+			table := supplier tableBuilder
+				         addColumn: [ :column | column rendering: [ :number | number ] ];
+				         addColumn: [ :column | column rendering: [ :number | number + 1 ] ];
+				         styledWith: 'fixed';
+				         build.
+
+			table changeContentsTo: #( 1 2 3 ).
+
+			table
+			]
+		equals:
+		'<table class="ui table fixed"><tbody><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>'
+]
+
 { #category : #'tests-Processing' }
 SemanticUIComponentSupplierTest >> testUpdateRoot [
 
