@@ -46,10 +46,22 @@ SemanticStyle >> aligned [
 	cssClasses add: 'aligned'
 ]
 
+{ #category : #icons }
+SemanticStyle >> alternate [
+
+	cssClasses add: 'alternate'
+]
+
 { #category : #color }
 SemanticStyle >> approve [
 
 	cssClasses add: 'approve'
+]
+
+{ #category : #cards }
+SemanticStyle >> attached [
+
+	cssClasses add: 'attached'
 ]
 
 { #category : #general }
@@ -82,7 +94,7 @@ SemanticStyle >> borderless [
 	cssClasses add: 'borderless'
 ]
 
-{ #category : #menu }
+{ #category : #cards }
 SemanticStyle >> bottom [
 
 	cssClasses add: 'bottom'
@@ -136,6 +148,12 @@ SemanticStyle >> close [
 	cssClasses add: 'close'
 ]
 
+{ #category : #icons }
+SemanticStyle >> cloud [
+
+	cssClasses add: 'cloud'
+]
+
 { #category : #table }
 SemanticStyle >> column [
 
@@ -152,6 +170,12 @@ SemanticStyle >> comment [
 SemanticStyle >> comments [
 
 	cssClasses add: 'comments'
+]
+
+{ #category : #general }
+SemanticStyle >> compact [
+
+	cssClasses add: 'compact'
 ]
 
 { #category : #container }
@@ -212,6 +236,12 @@ SemanticStyle >> dividing [
 SemanticStyle >> doubling [
 
 	cssClasses add: 'doubling'
+]
+
+{ #category : #icons }
+SemanticStyle >> download [
+
+	cssClasses add: 'download'
 ]
 
 { #category : #general }
@@ -340,6 +370,12 @@ SemanticStyle >> image [
 	cssClasses add: 'image'
 ]
 
+{ #category : #general }
+SemanticStyle >> info [
+
+	cssClasses add: 'info'
+]
+
 { #category : #initialization }
 SemanticStyle >> initialize [
 
@@ -454,6 +490,12 @@ SemanticStyle >> modal [
 	cssClasses add: 'modal'
 ]
 
+{ #category : #general }
+SemanticStyle >> negative [
+
+	cssClasses add: 'negative'
+]
+
 { #category : #color }
 SemanticStyle >> ok [
 
@@ -478,10 +520,22 @@ SemanticStyle >> orange [
 	cssClasses add: 'orange'
 ]
 
+{ #category : #icons }
+SemanticStyle >> outline [
+
+	cssClasses add: 'outline'
+]
+
 { #category : #general }
 SemanticStyle >> pointing [
 
 	cssClasses add: 'pointing'
+]
+
+{ #category : #general }
+SemanticStyle >> positive [
+
+	cssClasses add: 'positive'
 ]
 
 { #category : #general }
@@ -526,7 +580,7 @@ SemanticStyle >> rounded [
 	cssClasses add: 'rounded'
 ]
 
-{ #category : #'instance creation' }
+{ #category : #table }
 SemanticStyle >> row [
 
 	cssClasses add: 'row'
@@ -568,6 +622,12 @@ SemanticStyle >> seven [
 	cssClasses add: 'seven'
 ]
 
+{ #category : #icons }
+SemanticStyle >> signOut [
+
+	cssClasses add: 'sign-out'
+]
+
 { #category : #numbers }
 SemanticStyle >> six [
 
@@ -596,6 +656,12 @@ SemanticStyle >> stackable [
 SemanticStyle >> striped [
 
 	cssClasses add: 'striped'
+]
+
+{ #category : #general }
+SemanticStyle >> sub [
+
+	cssClasses add: 'sub'
 ]
 
 { #category : #general }
@@ -652,6 +718,12 @@ SemanticStyle >> top [
 	cssClasses add: 'top'
 ]
 
+{ #category : #icons }
+SemanticStyle >> trash [
+
+	cssClasses add: 'trash'
+]
+
 { #category : #numbers }
 SemanticStyle >> two [
 
@@ -662,6 +734,12 @@ SemanticStyle >> two [
 SemanticStyle >> ui [
 
 	cssClasses add: 'ui'
+]
+
+{ #category : #icons }
+SemanticStyle >> upload [
+
+	cssClasses add: 'upload'
 ]
 
 { #category : #positioning }

@@ -242,20 +242,54 @@ SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApp
 		equals: '<select name="1" size="15" class="willow"></select>'
 ]
 
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating [
+
+	self
+		assertRenderingOf: [ :supplier |
+			supplier
+				synchronicButtonLabeled: 'Search'
+				applying: [ :button | button addClass willow ]
+				evaluating: [ self fail ]
+			]
+		equals: '<button name="1" class="ui button willow" type="submit">Search</button>'
+]
+
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testTableBuilderForHeadlessTable [
+
+	self
+		assertRenderingOf: [ :supplier |
+			| table |
+
+			table := supplier tableBuilder
+				         addColumn: [ :column | column rendering: [ :number | number ] ];
+				         addColumn: [ :column | column rendering: [ :number | number + 1 ] ];
+				         styledWith: 'fixed';
+				         build.
+
+			table changeContentsTo: #( 1 2 3 ).
+
+			table
+			]
+		equals:
+		'<table class="ui table fixed"><tbody><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>'
+]
+
 { #category : #'tests-Processing' }
 SemanticUIComponentSupplierTest >> testUpdateRoot [
 
 	| html |
 
 	html := WAHtmlCanvas builder
-		fullDocument: true;
-		rootBlock: [ :root | SemanticUIComponentSupplier online updateRoot: root ];
-		render: [ :canvas |  ].
+		        fullDocument: true;
+		        rootBlock: [ :root | SemanticUIComponentSupplier online updateRoot: root ];
+		        render: [ :canvas |  ].
 
 	self
 		assert: html
 		equals:
-			'<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" integrity="sha256-/Z28yXtfBv/6/alw+yZuODgTbKZm86IKbPE/5kjO/xY=" crossorigin="anonymous"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js" integrity="sha256-Bhi6GMQ/72uYZcJXCJ2LToOIcN3+Cx47AZnq/Bw1f7A=" crossorigin="anonymous"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+		'<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha256-cDGQ39yChhpN5vzgHbjIdGEtQ5kXE9tttCsI7VR9TuY=" crossorigin="anonymous"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha256-fN8vcX2ULyTDspVTHEteK8hd3rQAb5thNiwakjAW75Q=" crossorigin="anonymous"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]
 
 { #category : #'tests-Processing' }
@@ -264,14 +298,15 @@ SemanticUIComponentSupplierTest >> testUpdateRootWithSelfHostedLibraries [
 	| html |
 
 	html := WAHtmlCanvas builder
-		fullDocument: true;
-		rootBlock: [ :root | 
-			(SemanticUIComponentSupplier
-				withSemanticUILibrary: SemanticUIDevelopmentMetadataLibrary default) updateRoot: root ];
-		render: [ :canvas |  ].
+		        fullDocument: true;
+		        rootBlock: [ :root |
+			        ( SemanticUIComponentSupplier withSemanticUILibrary:
+					          SemanticUIDevelopmentMetadataLibrary default ) updateRoot: root
+			        ];
+		        render: [ :canvas |  ].
 
 	self
 		assert: html
 		equals:
-			'<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="/files/semantic-ui-2.2.13/semantic.css"/><script type="text/javascript" src="/files/semantic-ui-2.2.13/semantic.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
+		'<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="/files/semantic-ui-2.5.0/semantic.css"/><script type="text/javascript" src="/files/semantic-ui-2.5.0/semantic.js"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]
