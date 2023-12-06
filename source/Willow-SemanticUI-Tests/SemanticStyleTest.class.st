@@ -33,9 +33,9 @@ SemanticStyleTest >> testGeneral [
 		assert: SemanticStyle for action actions active author basic button buttons close compact default
 				description disabled divided dividing doubling dropdown field fields fitted fluid form header
 				hidden icon image info item items label labeled longer metadata negative pointing positive
-				primary relaxed reply selection stackable sub submit text ui asString
+				primary relaxed reply search selection stackable sub submit text ui asString
 		equals:
-		'action actions active author basic button buttons close compact default description disabled divided dividing doubling dropdown field fields fitted fluid form header hidden icon image info item items label labeled longer metadata negative pointing positive primary relaxed reply selection stackable sub submit text ui'
+		'action actions active author basic button buttons close compact default description disabled divided dividing doubling dropdown field fields fitted fluid form header hidden icon image info item items label labeled longer metadata negative pointing positive primary relaxed reply search selection stackable sub submit text ui'
 ]
 
 { #category : #tests }

@@ -586,6 +586,12 @@ SemanticStyle >> row [
 	cssClasses add: 'row'
 ]
 
+{ #category : #general }
+SemanticStyle >> search [
+
+	cssClasses add: 'search'
+]
+
 { #category : #menu }
 SemanticStyle >> secondary [
 
