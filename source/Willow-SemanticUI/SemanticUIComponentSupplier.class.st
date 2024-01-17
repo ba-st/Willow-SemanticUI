@@ -161,6 +161,12 @@ SemanticUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 ]
 
 { #category : #Supplying }
+SemanticUIComponentSupplier >> multipleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
+
+	^ MultipleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand
+]
+
+{ #category : #Supplying }
 SemanticUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 
 	| field |

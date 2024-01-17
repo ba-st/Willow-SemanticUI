@@ -44,8 +44,8 @@ SemanticUIComponentSupplierTest >> scriptGeneratorClass [
 SemanticUIComponentSupplierTest >> testAsynchronicButtonLabeledApplying [
 
 	self
-		assertRenderingOf:
-			[ :supplier | supplier asynchronicButtonLabeled: 'Buy' applying: [ :button | button addClass willow ] ]
+		assertRenderingOf: [ :supplier |
+			supplier asynchronicButtonLabeled: 'Buy' applying: [ :button | button addClass willow ] ]
 		equals: '<button class="ui button willow" type="button">Buy</button>'
 ]
 
@@ -53,10 +53,10 @@ SemanticUIComponentSupplierTest >> testAsynchronicButtonLabeledApplying [
 SemanticUIComponentSupplierTest >> testAsynchronicLinkLabeledApplying [
 
 	self
-		assertRenderingOf:
-			[ :supplier | supplier asynchronicLinkLabeled: 'Buy' applying: [ :link | link addClass willow ] ]
+		assertRenderingOf: [ :supplier |
+		supplier asynchronicLinkLabeled: 'Buy' applying: [ :link | link addClass willow ] ]
 		equals:
-			'<a id="a-id1" class="willow">Buy</a><script type="text/javascript">$("#a-id1").click(function(event){arguments[0].preventDefault()});</script>'
+		'<a id="a-id1" class="willow">Buy</a><script type="text/javascript">$("#a-id1").click(function(event){arguments[0].preventDefault()});</script>'
 ]
 
 { #category : #'tests-Supplying - Non Portable' }
@@ -81,15 +81,31 @@ SemanticUIComponentSupplierTest >> testDialogBuilder [
 SemanticUIComponentSupplierTest >> testDropdownListApplying [
 
 	self
-		assertRenderingOf: [ :supplier | 
+		assertRenderingOf: [ :supplier |
 			| list |
 
 			list := supplier dropdownListApplying: [ :dropdownList | dropdownList addClass willow ].
+			list allowAnyOf: #( 'some' 'thing' 'another' ).
 			list on trigger inform: 'Triggered!'.
 			list
 			]
 		equals:
-			'<select name="1" id="select-id2" class="willow"></select><script type="text/javascript">$("#select-id2").change(function(event){alert("Triggered!")});$("#select-id2").dropdown();</script>'
+		'<select name="1" id="id2" class="willow"><option value="1">some</option><option value="2">thing</option><option value="3">another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);$("#id2").change(function(event){alert("Triggered!")});$("#id2").dropdown();</script>'
+]
+
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testDropdownListApplyingApplyingToOptions [
+
+	self
+		assertRenderingOf: [ :supplier |
+			( supplier
+				  dropdownListApplying: [ :list | list addClass willow ]
+				  applyingToOptions: [ :option | option attributeAt: 'hidden' put: true ] )
+				allowAnyOf: #( 'some' 'thing' 'another' );
+				yourself
+			]
+		equals:
+		'<select name="1" id="id2" class="willow"><option value="1" hidden>some</option><option value="2" hidden>thing</option><option value="3" hidden>another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);$("#id2").dropdown();</script>'
 ]
 
 { #category : #'tests-Supplying - Non Portable' }
@@ -113,14 +129,14 @@ SemanticUIComponentSupplierTest >> testDropdownListNamedApplying [
 SemanticUIComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplying [
 
 	self
-		assertRenderingOf: [ :supplier | 
+		assertRenderingOf: [ :supplier |
 			supplier
 				fieldSetContaining: 'The View'
 				applying: [ :fieldSet | fieldSet beDisabled ]
 				withLegend: 'Its Title'
-				applying: [ :legend | legend beAutofocused ] ]
-		equals:
-			'<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
+				applying: [ :legend | legend beAutofocused ]
+			]
+		equals: '<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
 ]
 
 { #category : #'tests-Supplying - Non Portable' }
@@ -175,16 +191,31 @@ SemanticUIComponentSupplierTest >> testInteractiveSelectableInputItemNamedInterp
 SemanticUIComponentSupplierTest >> testMultiLineTextFieldApplying [
 
 	self
-		assertRenderingOf:
-			[ :supplier | supplier multiLineTextFieldApplying: [ :textField | textField addClass willow ] ]
+		assertRenderingOf: [ :supplier |
+		supplier multiLineTextFieldApplying: [ :textField | textField addClass willow ] ]
 		equals: '<textarea rows="auto" cols="auto" name="1" class="willow"></textarea>'
+]
+
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceApplying [
+
+	self
+		assertRenderingOf: [ :supplier |
+			( supplier
+				  multipleSelectionListBoxDisplayingAtOnce: 15
+				  applying: [ :listBox | listBox addClass willow ] )
+				allowAnyOf: #( 'some' 'thing' 'another' );
+				yourself
+			]
+		equals:
+		'<select name="1" size="15" class="willow" multiple><option value="1">some</option><option value="2">thing</option><option value="3">another</option></select><input name="2" type="hidden"/>'
 ]
 
 { #category : #'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testNaturalNumberFieldApplying [
 
 	self
-		assertRenderingOf: [ :supplier | 
+		assertRenderingOf: [ :supplier |
 			| field |
 
 			field := supplier naturalNumberFieldApplying: [ :link | link addClass willow ].
@@ -192,26 +223,26 @@ SemanticUIComponentSupplierTest >> testNaturalNumberFieldApplying [
 			field
 			]
 		equals:
-			'<div class="ui input"><input value="" name="1" type="number" min="0" class="willow" id="input-id2"/></div><script type="text/javascript">$("#input-id2").change(function(event){alert("Triggered!")});</script>'
+		'<div class="ui input"><input value="" name="1" type="number" min="0" class="willow" id="input-id2"/></div><script type="text/javascript">$("#input-id2").change(function(event){alert("Triggered!")});</script>'
 ]
 
 { #category : #'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testRadioRenderingWithApplyingToLabelApplyingToInput [
 
 	self
-		assertRenderingOf: [ :supplier | 
+		assertRenderingOf: [ :supplier |
 			| radio |
 
 			radio := supplier
-				radioRenderingWith: #asUppercase
-				applyingToLabel: [ :label | label setTitleTo: 'The letters' ]
-				applyingToInput: [ :input | input addClass willow ].
-			radio allowAnyOf: #(f h).
+				         radioRenderingWith: #asUppercase
+				         applyingToLabel: [ :label | label setTitleTo: 'The letters' ]
+				         applyingToInput: [ :input | input addClass willow ].
+			radio allowAnyOf: #( f h ).
 			radio on trigger inform: 'Triggered!'.
 			radio
 			]
 		equals:
-			'<div class="inline fields"><div class="field"><div class="ui radio checkbox"><input name="1" class="willow" id="input-id2" value="1" type="radio"/><label>F</label></div></div><div class="field"><div class="ui radio checkbox"><input name="1" class="willow" id="input-id3" value="2" type="radio"/><label>H</label></div></div></div><script type="text/javascript">$("#input-id2").change(function(event){alert("Triggered!")});$("#input-id3").change(function(event){alert("Triggered!")});$(".ui.checkbox").checkbox();</script>'
+		'<div class="inline fields"><div class="field"><div class="ui radio checkbox"><input name="1" class="willow" id="input-id2" value="1" type="radio"/><label>F</label></div></div><div class="field"><div class="ui radio checkbox"><input name="1" class="willow" id="input-id3" value="2" type="radio"/><label>H</label></div></div></div><script type="text/javascript">$("#input-id2").change(function(event){alert("Triggered!")});$("#input-id3").change(function(event){alert("Triggered!")});$(".ui.checkbox").checkbox();</script>'
 ]
 
 { #category : #'tests-Supplying - Non Portable' }
@@ -226,8 +257,8 @@ SemanticUIComponentSupplierTest >> testSimpleInput [
 SemanticUIComponentSupplierTest >> testSingleLineTextFieldApplying [
 
 	self
-		assertRenderingOf:
-			[ :supplier | supplier singleLineTextFieldApplying: [ :textField | textField addClass willow ] ]
+		assertRenderingOf: [ :supplier |
+		supplier singleLineTextFieldApplying: [ :textField | textField addClass willow ] ]
 		equals: '<input value="" name="1" class="willow" type="text"/>'
 ]
 
@@ -235,11 +266,31 @@ SemanticUIComponentSupplierTest >> testSingleLineTextFieldApplying [
 SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApplying [
 
 	self
-		assertRenderingOf: [ :supplier | 
-			supplier
-				singleSelectionListBoxDisplayingAtOnce: 15
-				applying: [ :listBox | listBox addClass willow ] ]
-		equals: '<select name="1" size="15" class="willow"></select>'
+		assertRenderingOf: [ :supplier |
+			( supplier
+				  singleSelectionListBoxDisplayingAtOnce: 15
+				  applying: [ :listBox | listBox addClass willow ] )
+				allowAnyOf: #( 'some' 'thing' 'another' );
+				yourself
+			]
+		equals:
+		'<select name="1" id="id2" size="15" class="willow"><option value="1">some</option><option value="2">thing</option><option value="3">another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
+]
+
+{ #category : #'tests-Supplying' }
+SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApplyingApplyingToOptions [
+
+	self
+		assertRenderingOf: [ :supplier |
+			( supplier
+				  singleSelectionListBoxDisplayingAtOnce: 15
+				  applying: [ :list | list addClass willow ]
+				  applyingToOptions: [ :option | option attributeAt: 'hidden' put: true ] )
+				allowAnyOf: #( 'some' 'thing' 'another' );
+				yourself
+			]
+		equals:
+		'<select name="1" id="id2" size="15" class="willow"><option value="1" hidden>some</option><option value="2" hidden>thing</option><option value="3" hidden>another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
 { #category : #'tests-Supplying' }
