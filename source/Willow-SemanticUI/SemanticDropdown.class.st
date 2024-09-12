@@ -44,7 +44,9 @@ SemanticDropdown >> configureValueOf: anInput [
 { #category : #'private - accessing' }
 SemanticDropdown >> dropdownScriptOn: aCanvas [
 
-	^ aCanvas jQuery this call: 'dropdown'
+	^ aCanvas jQuery this call: 'dropdown' with: ( Dictionary new
+			    at: 'fullTextSearch' put: 'exact';
+			    yourself )
 ]
 
 { #category : #initialization }
