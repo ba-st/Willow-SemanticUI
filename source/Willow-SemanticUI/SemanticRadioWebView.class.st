@@ -3,7 +3,7 @@ A component to represent a Semantic UI set of buttons that behaves like a radio 
 "
 Class {
 	#name : #SemanticRadioWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#superclass : #AbstractSingleSelectionWebView,
 	#instVars : [
 		'renderingBlock',
 		'interactionInterpreter',
@@ -28,7 +28,7 @@ SemanticRadioWebView >> initializeRenderingWith: aRenderingBlock applying: anInp
 	renderingBlock := aRenderingBlock.
 	inputCommand := anInputCommand.
 
-	interactionInterpreter := EventInterpreterDispatcher defaultingToChange.
+	interactionInterpreter := SingleEventInterpreterDispatcher defaultingToChange.
 	identifierAssigner := IdentifierAssigner prefixedBy: 'radio-button'
 ]
 

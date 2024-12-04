@@ -40,7 +40,7 @@ SemanticSelectableInput >> content [
 SemanticSelectableInput >> initializeCheckboxView [
 
 	checkboxView := SemanticCheckbox
-		unlabeledInteractingThrough: EventInterpreterDispatcher defaultingToClickHidden
+		unlabeledInteractingThrough: SingleEventInterpreterDispatcher defaultingToClickHidden
 		applying: self checkboxCommand.
 	checkboxView setCheckTo: true.
 	checkboxView on trigger

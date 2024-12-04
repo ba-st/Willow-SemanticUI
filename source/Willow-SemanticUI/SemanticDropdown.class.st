@@ -3,7 +3,7 @@ View for the select component in Semantic UI
 "
 Class {
 	#name : #SemanticDropdown,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#superclass : #AbstractSingleSelectionWebView,
 	#instVars : [
 		'name',
 		'interactionInterpreter',
