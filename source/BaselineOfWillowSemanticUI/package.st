@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfWillowSemanticUI }
+Package { #name : 'BaselineOfWillowSemanticUI' }
