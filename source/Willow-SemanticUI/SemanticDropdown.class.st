@@ -2,17 +2,19 @@
 View for the select component in Semantic UI
 "
 Class {
-	#name : #SemanticDropdown,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#name : 'SemanticDropdown',
+	#superclass : 'SingleSelectionWebViewBehavior',
 	#instVars : [
 		'name',
 		'interactionInterpreter',
 		'componentCommand'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticDropdown class >> named: aName interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	^ self new
@@ -21,19 +23,19 @@ SemanticDropdown class >> named: aName interactingThrough: anInteractionInterpre
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 SemanticDropdown >> chooseOptionAt: anIndex [
 
 	self chooseEqualTo: (availableElements at: anIndex)
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 SemanticDropdown >> configureCallbackOf: anInput [
 
 	anInput callback: [ :indexString | self chooseOptionAt: indexString asNumber ]
 ]
 
-{ #category : #'private - configuring' }
+{ #category : 'private - configuring' }
 SemanticDropdown >> configureValueOf: anInput [
 
 	chosenElementOptional
@@ -41,7 +43,7 @@ SemanticDropdown >> configureValueOf: anInput [
 		ifUnused: [ :explanations |  ]
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticDropdown >> dropdownScriptOn: aCanvas [
 
 	^ aCanvas jQuery this call: 'dropdown' with: ( Dictionary new
@@ -49,7 +51,7 @@ SemanticDropdown >> dropdownScriptOn: aCanvas [
 			    yourself )
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticDropdown >> initializeNamed: aName interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	name := aName.
@@ -57,13 +59,13 @@ SemanticDropdown >> initializeNamed: aName interactingThrough: anInteractionInte
 	componentCommand := aComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticDropdown >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticDropdown >> render: option asOptionAt: index on: aCanvas [
 
 	aCanvas div
@@ -72,7 +74,7 @@ SemanticDropdown >> render: option asOptionAt: index on: aCanvas [
 		with: option
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticDropdown >> renderContentOn: aCanvas [
 
 	aCanvas div
@@ -85,13 +87,13 @@ SemanticDropdown >> renderContentOn: aCanvas [
 			self renderOptionsOn: aCanvas ]
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticDropdown >> renderIconOn: aCanvas [
 
 	aCanvas icon class: SemanticStyle for dropdown icon
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticDropdown >> renderInputOn: aCanvas [
 
 	| component |
@@ -102,7 +104,7 @@ SemanticDropdown >> renderInputOn: aCanvas [
 	component interactUsing: interactionInterpreter
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticDropdown >> renderNameOn: aCanvas [
 
 	aCanvas div
@@ -110,7 +112,7 @@ SemanticDropdown >> renderNameOn: aCanvas [
 		with: name
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticDropdown >> renderOptionsOn: aCanvas [
 
 	aCanvas div

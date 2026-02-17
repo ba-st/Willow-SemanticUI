@@ -2,18 +2,20 @@
 View for the checkbox input component in Semantic UI
 "
 Class {
-	#name : #SemanticCheckbox,
-	#superclass : #WAPainter,
+	#name : 'SemanticCheckbox',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'labelHolder',
 		'interactionInterpreter',
 		'isChecked',
 		'componentCommand'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticCheckbox class >> labeled: aLabel interactingThrough: anInteractionInterpreter [
 
 	^ self
@@ -22,7 +24,7 @@ SemanticCheckbox class >> labeled: aLabel interactingThrough: anInteractionInter
 		applying: CompositeComponentCommand empty
 ]
 
-{ #category : #'private - instance creation' }
+{ #category : 'private - instance creation' }
 SemanticCheckbox class >> labeledWithContentOf: aHolder interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	^ self new
@@ -31,13 +33,13 @@ SemanticCheckbox class >> labeledWithContentOf: aHolder interactingThrough: anIn
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticCheckbox class >> noLabelHolder [
 
 	^ Optional unusedBecause: 'No label given'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticCheckbox class >> unlabeledInteractingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	^ self
@@ -46,7 +48,7 @@ SemanticCheckbox class >> unlabeledInteractingThrough: anInteractionInterpreter 
 		applying: aComponentCommand
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticCheckbox >> containerComponentOn: aCanvas [
 
 	| containerComponent |
@@ -57,7 +59,7 @@ SemanticCheckbox >> containerComponentOn: aCanvas [
 	^ containerComponent
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticCheckbox >> initializeLabeledWithContentOf: aHolder interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	labelHolder := aHolder.
@@ -66,7 +68,7 @@ SemanticCheckbox >> initializeLabeledWithContentOf: aHolder interactingThrough: 
 	componentCommand := aComponentCommand
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticCheckbox >> inputRenderedOn: aCanvas [
 
 	^ aCanvas checkbox
@@ -76,19 +78,19 @@ SemanticCheckbox >> inputRenderedOn: aCanvas [
 		yourself
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 SemanticCheckbox >> isChecked [
 
 	^ isChecked
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticCheckbox >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticCheckbox >> renderContentOn: aCanvas [
 
 	| containerComponent |
@@ -102,7 +104,7 @@ SemanticCheckbox >> renderContentOn: aCanvas [
 			]
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticCheckbox >> renderLabelFor: anIdentifier on: aCanvas [
 
 	| labelComponent |
@@ -116,7 +118,7 @@ SemanticCheckbox >> renderLabelFor: anIdentifier on: aCanvas [
 		ifUnused: [ :explanations |  ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticCheckbox >> setCheckTo: aBoolean [
 
 	isChecked := aBoolean

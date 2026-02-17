@@ -2,26 +2,28 @@
 I'm a WALibary serving the files in source form, suitable for development
 "
 Class {
-	#name : #SemanticUIDevelopmentMetadataLibrary,
-	#superclass : #SemanticUIMetadataLibrary,
-	#category : #'Willow-SemanticUI-Libraries'
+	#name : 'SemanticUIDevelopmentMetadataLibrary',
+	#superclass : 'SemanticUIMetadataLibrary',
+	#category : 'Willow-SemanticUI-Libraries',
+	#package : 'Willow-SemanticUI',
+	#tag : 'Libraries'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIDevelopmentMetadataLibrary >> fileSelectors [
 
 	<ignoreForCoverage>
 	^ super fileSelectors , #(semanticCss semanticJs)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIDevelopmentMetadataLibrary >> selectorsToInclude [
 
 	<ignoreForCoverage>
 	^ #(semanticCss semanticJs)
 ]
 
-{ #category : #'uploaded metadata' }
+{ #category : 'uploaded metadata' }
 SemanticUIDevelopmentMetadataLibrary >> semanticCss [
 
 	^ WAFileLibraryResource
@@ -31,7 +33,7 @@ SemanticUIDevelopmentMetadataLibrary >> semanticCss [
 		  contents: ( GRDelayedSend receiver: self selector: #semanticCssContentWithLocalFonts )
 ]
 
-{ #category : #uploaded }
+{ #category : 'uploaded' }
 SemanticUIDevelopmentMetadataLibrary >> semanticCssContent [
 	^ ' /*
  * # Semantic UI - 2.5.0
@@ -38794,7 +38796,7 @@ body.pushable > .pusher {
 *******************************/'
 ]
 
-{ #category : #'uploaded metadata' }
+{ #category : 'uploaded metadata' }
 SemanticUIDevelopmentMetadataLibrary >> semanticCssContentWithLocalFonts [
 
 	<ignoreForCoverage>
@@ -38802,7 +38804,7 @@ SemanticUIDevelopmentMetadataLibrary >> semanticCssContentWithLocalFonts [
 	^ self changeRemoteFontsToLocalIn: self semanticCssContent
 ]
 
-{ #category : #'uploaded metadata' }
+{ #category : 'uploaded metadata' }
 SemanticUIDevelopmentMetadataLibrary >> semanticJs [
 
 	^ WAFileLibraryResource
@@ -38812,7 +38814,7 @@ SemanticUIDevelopmentMetadataLibrary >> semanticJs [
 		  contents: ( GRDelayedSend receiver: self selector: #semanticJsContent )
 ]
 
-{ #category : #uploaded }
+{ #category : 'uploaded' }
 SemanticUIDevelopmentMetadataLibrary >> semanticJsContent [
 	^ ' /*
  * # Semantic UI - 2.5.0

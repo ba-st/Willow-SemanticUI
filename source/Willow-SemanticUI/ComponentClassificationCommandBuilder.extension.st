@@ -1,6 +1,6 @@
-Extension { #name : #ComponentClassificationCommandBuilder }
+Extension { #name : 'ComponentClassificationCommandBuilder' }
 
-{ #category : #'*Willow-SemanticUI' }
+{ #category : '*Willow-SemanticUI' }
 ComponentClassificationCommandBuilder >> semantic: aBlock [
 
 	| style |

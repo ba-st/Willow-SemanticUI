@@ -2,39 +2,41 @@
 The catalog implementation when using Semantic UI
 "
 Class {
-	#name : #SemanticUIComponentSupplier,
-	#superclass : #FrontendComponentSupplier,
+	#name : 'SemanticUIComponentSupplier',
+	#superclass : 'FrontendComponentSupplier',
 	#instVars : [
 		'semanticUILibraries'
 	],
-	#category : #'Willow-SemanticUI-Frontend'
+	#category : 'Willow-SemanticUI-Frontend',
+	#package : 'Willow-SemanticUI',
+	#tag : 'Frontend'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticUIComponentSupplier class >> online [
 
 	^ self usingAll: {SemanticUIOnlineLibrary default}
 ]
 
-{ #category : #'instance creation - private' }
+{ #category : 'instance creation - private' }
 SemanticUIComponentSupplier class >> usingAll: aLibraryCollection [
 
 	^ self new initializeUsingAll: aLibraryCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticUIComponentSupplier class >> withSemanticUILibrary: aSemanticUILibrary [
 
 	^ self usingAll: {aSemanticUILibrary}
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIComponentSupplier >> activeElementStyle [
 
 	^ SemanticStyle for active
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: aComponentCommand [
 
 	^ AsynchronicButtonWebView
@@ -43,13 +45,13 @@ SemanticUIComponentSupplier >> asynchronicButtonLabeled: aRenderable applying: a
 		  ( theButton addClass semantic: [ :style | style ui button ] ) + aComponentCommand ]
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> asynchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
 	^ LinkWebView asynchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> bottomMenuWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -58,7 +60,7 @@ SemanticUIComponentSupplier >> bottomMenuWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> cardContainerWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -67,13 +69,13 @@ SemanticUIComponentSupplier >> cardContainerWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> dialogBuilder [
 
 	^ SemanticModalBuilder new
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
@@ -82,7 +84,7 @@ SemanticUIComponentSupplier >> dropdownListApplying: aComponentCommand applyingT
 		  applyingToOptions: anOptionCommand
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> dropdownListNamed: aName applying: aComponentCommand [
 
 	^ SemanticDropdown
@@ -91,7 +93,7 @@ SemanticUIComponentSupplier >> dropdownListNamed: aName applying: aComponentComm
 		applying: [ :theDropdown | ( theDropdown addClass semantic: [ :style | style item ] ) + aComponentCommand ]
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCommand withLegend: aTitle applying: legendCommand [
 
 	^ FieldSetWebView
@@ -101,13 +103,13 @@ SemanticUIComponentSupplier >> fieldSetContaining: aWebView applying: fieldSetCo
 		applying: legendCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticUIComponentSupplier >> initializeUsingAll: aLibraryCollection [
 
 	semanticUILibraries := aLibraryCollection
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> interactiveButtonDescribedBy: aString [
 
 	^ SemanticButton
@@ -116,7 +118,7 @@ SemanticUIComponentSupplier >> interactiveButtonDescribedBy: aString [
 		applying: [ :theButton |  ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> interactiveCheckBoxDescribedBy: aDescription [
 
 	^ SemanticCheckbox
@@ -124,7 +126,7 @@ SemanticUIComponentSupplier >> interactiveCheckBoxDescribedBy: aDescription [
 		interactingThrough: EventInterpreterDispatcher defaultingToClickHidden
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> interactiveInputItemNamed: aName interpretedBy: aTextCodec [
 
 	^ SemanticInput
@@ -133,7 +135,7 @@ SemanticUIComponentSupplier >> interactiveInputItemNamed: aName interpretedBy: a
 		applying: ( SemanticPopup toDisplay: aName )
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> interactiveSelectableInputItemNamed: aName interpretedBy: anInputInterpreter defaultingTo: aDefaultModel [
 
 	| inputView |
@@ -145,7 +147,7 @@ SemanticUIComponentSupplier >> interactiveSelectableInputItemNamed: aName interp
 		applying: [ :theInput | theInput addClass semantic: [ :style | style item ] ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> menuItemWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -154,19 +156,19 @@ SemanticUIComponentSupplier >> menuItemWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> multiLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView multiLineApplying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> multipleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand [
 
 	^ MultipleSelectionListBoxWebView displayingAtOnce: aNumberOfElements applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 
 	| field |
@@ -180,7 +182,7 @@ SemanticUIComponentSupplier >> naturalNumberFieldApplying: aComponentCommand [
 		  applying: [ :container | container addClass semantic: [ :style | style ui input ] ]
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLabel: aLabelCommand applyingToInput: anInputCommand [
 
 	| radio |
@@ -195,7 +197,7 @@ SemanticUIComponentSupplier >> radioRenderingWith: aRenderingBlock applyingToLab
 		  applying: [ :container | container addClass semantic: [ :style | style inline fields ] ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> rightActiveMenuItemWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -204,7 +206,7 @@ SemanticUIComponentSupplier >> rightActiveMenuItemWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> rightMenuItemWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -213,7 +215,7 @@ SemanticUIComponentSupplier >> rightMenuItemWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> simpleInput [
 
 	^ SemanticInput
@@ -222,13 +224,13 @@ SemanticUIComponentSupplier >> simpleInput [
 		applying: [ :theInput |  ]
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> singleLineTextFieldApplying: aComponentCommand [
 
 	^ TextFieldWebView singleLineApplying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOfElements applying: aComponentCommand applyingToOptions: anOptionCommand [
 
 	^ SingleSelectionWebView
@@ -237,7 +239,7 @@ SemanticUIComponentSupplier >> singleSelectionListBoxDisplayingAtOnce: aNumberOf
 		  applyingToOptions: anOptionCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aComponentCommand evaluating: anActionBlock [
 
 	^ SynchronicSubmitButtonWebView
@@ -247,13 +249,13 @@ SemanticUIComponentSupplier >> synchronicButtonLabeled: aRenderable applying: aC
 		  evaluating: anActionBlock
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> synchronicLinkLabeled: aRenderable applying: aComponentCommand [
 
 	^ LinkWebView synchronicLabeled: aRenderable applying: aComponentCommand
 ]
 
-{ #category : #Supplying }
+{ #category : 'Supplying' }
 SemanticUIComponentSupplier >> tableBuilder [
 
 	^ TableWebViewBuilder new
@@ -261,7 +263,7 @@ SemanticUIComponentSupplier >> tableBuilder [
 		  yourself
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> textWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -270,7 +272,7 @@ SemanticUIComponentSupplier >> textWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #'Supplying - Non Portable' }
+{ #category : 'Supplying - Non Portable' }
 SemanticUIComponentSupplier >> topMenuWith: aContentBlock [
 
 	^ [ :canvas | 
@@ -279,7 +281,7 @@ SemanticUIComponentSupplier >> topMenuWith: aContentBlock [
 		with: aContentBlock ]
 ]
 
-{ #category : #Processing }
+{ #category : 'Processing' }
 SemanticUIComponentSupplier >> updateRoot: aRoot [
 
 	aRoot beHtml5.

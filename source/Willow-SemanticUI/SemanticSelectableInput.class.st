@@ -2,18 +2,20 @@
 A semantic combination of components, to allow toggling on/off the value of an input.
 "
 Class {
-	#name : #SemanticSelectableInput,
-	#superclass : #WAPainter,
+	#name : 'SemanticSelectableInput',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'checkboxView',
 		'inputView',
 		'componentCommand',
 		'defaultModel'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticSelectableInput class >> selecting: anInputView defaultingTo: aDefaultModel applying: aComponentCommand [
 
 	^ self new
@@ -22,13 +24,13 @@ SemanticSelectableInput class >> selecting: anInputView defaultingTo: aDefaultMo
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticSelectableInput >> checkboxCommand [
 
 	^ ComponentClassificationCommand toStyleWith: SemanticStyle for toggle
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticSelectableInput >> content [
 
 	^ checkboxView isChecked
@@ -36,7 +38,7 @@ SemanticSelectableInput >> content [
 		ifFalse: [ defaultModel ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticSelectableInput >> initializeCheckboxView [
 
 	checkboxView := SemanticCheckbox
@@ -48,7 +50,7 @@ SemanticSelectableInput >> initializeCheckboxView [
 		onElementsMatching: [ :canvas | canvas jQuery this parent next ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticSelectableInput >> initializeSelecting: anInputView defaultingTo: aDefaultModel applying: aComponentCommand [
 
 	componentCommand := aComponentCommand.
@@ -57,14 +59,14 @@ SemanticSelectableInput >> initializeSelecting: anInputView defaultingTo: aDefau
 	self initializeCheckboxView
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticSelectableInput >> on [
 
 	^ CombinedEventInterpreterDispatcher
 		combiningInterpretersOfAll: ( Array with: checkboxView with: inputView )
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticSelectableInput >> renderContentOn: aCanvas [
 
 	| containerComponent |
@@ -77,7 +79,7 @@ SemanticSelectableInput >> renderContentOn: aCanvas [
 				render: inputView ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticSelectableInput >> setContentTo: aModel [
 
 	inputView setContentTo: aModel

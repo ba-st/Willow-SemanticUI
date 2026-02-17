@@ -2,8 +2,8 @@
 A component to represent a Semantic UI modal (dialog).
 "
 Class {
-	#name : #SemanticModal,
-	#superclass : #WAPainter,
+	#name : 'SemanticModal',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'header',
 		'footer',
@@ -12,10 +12,12 @@ Class {
 	#pools : [
 		'Willow'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticModal class >> withHeader: aModalHeader content: aBodyView footer: aModalFooter applyingToDialog: aDialogCommand [
 
 	^ self new
@@ -25,7 +27,7 @@ SemanticModal class >> withHeader: aModalHeader content: aBodyView footer: aModa
 		applyingToDialog: aDialogCommand
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticModal >> cleanModalFunctionsOn: canvas [
 
 	^ (canvas jQuery this remove
@@ -33,7 +35,7 @@ SemanticModal >> cleanModalFunctionsOn: canvas [
 		asFunction
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticModal >> contentWrapping: aBodyView [
 
 	^ [ :canvas | 
@@ -44,7 +46,7 @@ SemanticModal >> contentWrapping: aBodyView [
 	canvas render: footer ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticModal >> initializeWithHeader: aModalHeader content: aBodyView footer: aModalFooter applyingToDialog: aDialogCommand [
 
 	header := aModalHeader.
@@ -55,7 +57,7 @@ SemanticModal >> initializeWithHeader: aModalHeader content: aBodyView footer: a
 			[ :container | ( self styleCommandFor: container ) + ( self modalScriptCommandFor: container ) + aDialogCommand ]
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticModal >> modalScriptCommandFor: container [
 
 	^ container addScript
@@ -72,19 +74,19 @@ SemanticModal >> modalScriptCommandFor: container [
 				call: 'modal' with: 'show' ]
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModal >> on [
 
 	^ footer on
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticModal >> renderContentOn: aCanvas [
 
 	aCanvas render: dialog
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticModal >> styleCommandFor: container [
 
 	^ container addClass semantic: [ :style | style ui modal ]
