@@ -11,11 +11,10 @@ and [SemanticUI](https://semantic-ui.com/)
 [![Markdown Lint](https://github.com/ba-st/Willow-SemanticUI/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/ba-st/Willow-SemanticUI/actions/workflows/markdown-lint.yml)
 
 [![GitHub release](https://img.shields.io/github/release/ba-st/Willow-SemanticUI.svg)](https://github.com/ba-st/Willow-SemanticUI/releases/latest)
-[![Pharo 7.0](https://img.shields.io/badge/Pharo-7.0-informational)](https://pharo.org)
-[![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
-[![Pharo 9.0](https://img.shields.io/badge/Pharo-9.0-informational)](https://pharo.org)
 [![Pharo 10](https://img.shields.io/badge/Pharo-10-informational)](https://pharo.org)
 [![Pharo 11](https://img.shields.io/badge/Pharo-11-informational)](https://pharo.org)
+[![Pharo 12](https://img.shields.io/badge/Pharo-12-informational)](https://pharo.org)
+[![Pharo 13](https://img.shields.io/badge/Pharo-13-informational)](https://pharo.org)
 
 The project goal is to complement Willow with a component supplier that allows
 the creation of Semantic UI applications.
