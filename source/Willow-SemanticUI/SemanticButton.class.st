@@ -2,17 +2,19 @@
 View for the button component in Semantic UI
 "
 Class {
-	#name : #SemanticButton,
-	#superclass : #WAPainter,
+	#name : 'SemanticButton',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'interactionInterpreter',
 		'componentCommand',
 		'label'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticButton class >> labeled: aLabel interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	^ self new
@@ -21,7 +23,7 @@ SemanticButton class >> labeled: aLabel interactingThrough: anInteractionInterpr
 		applying: aComponentCommand asWebComponentCommand
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticButton >> initializeLabeled: aLabel interactingThrough: anInteractionInterpreter applying: aComponentCommand [
 
 	label := aLabel.
@@ -29,13 +31,13 @@ SemanticButton >> initializeLabeled: aLabel interactingThrough: anInteractionInt
 	componentCommand := aComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticButton >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticButton >> renderContentOn: aCanvas [
 
 	aCanvas button

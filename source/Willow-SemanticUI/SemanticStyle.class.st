@@ -2,771 +2,773 @@
 A concatenation of Semantic UI css styles.
 "
 Class {
-	#name : #SemanticStyle,
-	#superclass : #Object,
+	#name : 'SemanticStyle',
+	#superclass : 'Object',
 	#instVars : [
 		'cssClasses'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticStyle class >> for [
 
 	^ self new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticStyle class >> ui [
 
 	^ self for ui
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> action [
 
 	cssClasses add: 'action'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> actions [
 
 	cssClasses add: 'actions'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> active [
 
 	cssClasses add: 'active'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> aligned [
 
 	cssClasses add: 'aligned'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> alternate [
 
 	cssClasses add: 'alternate'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> approve [
 
 	cssClasses add: 'approve'
 ]
 
-{ #category : #cards }
+{ #category : 'cards' }
 SemanticStyle >> attached [
 
 	cssClasses add: 'attached'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> author [
 
 	cssClasses add: 'author'
 ]
 
-{ #category : #views }
+{ #category : 'views' }
 SemanticStyle >> avatar [
 
 	cssClasses add: 'avatar'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> basic [
 
 	cssClasses add: 'basic'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> big [
 
 	cssClasses add: 'big'
 ]
 
-{ #category : #menu }
+{ #category : 'menu' }
 SemanticStyle >> borderless [
 
 	cssClasses add: 'borderless'
 ]
 
-{ #category : #cards }
+{ #category : 'cards' }
 SemanticStyle >> bottom [
 
 	cssClasses add: 'bottom'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> brown [
 
 	cssClasses add: 'brown'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> button [
 
 	cssClasses add: 'button'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> buttons [
 
 	cssClasses add: 'buttons'
 ]
 
-{ #category : #views }
+{ #category : 'views' }
 SemanticStyle >> card [
 
 	cssClasses add: 'card'
 ]
 
-{ #category : #views }
+{ #category : 'views' }
 SemanticStyle >> cards [
 
 	cssClasses add: 'cards'
 ]
 
-{ #category : #input }
+{ #category : 'input' }
 SemanticStyle >> checkbox [
 
 	cssClasses add: 'checkbox'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> circular [
 
 	cssClasses add: 'circular'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> close [
 
 	cssClasses add: 'close'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> cloud [
 
 	cssClasses add: 'cloud'
 ]
 
-{ #category : #table }
+{ #category : 'table' }
 SemanticStyle >> column [
 
 	cssClasses add: 'column'
 ]
 
-{ #category : #views }
+{ #category : 'views' }
 SemanticStyle >> comment [
 
 	cssClasses add: 'comment'
 ]
 
-{ #category : #views }
+{ #category : 'views' }
 SemanticStyle >> comments [
 
 	cssClasses add: 'comments'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> compact [
 
 	cssClasses add: 'compact'
 ]
 
-{ #category : #container }
+{ #category : 'container' }
 SemanticStyle >> container [
 
 	cssClasses add: 'container'
 ]
 
-{ #category : #views }
+{ #category : 'views' }
 SemanticStyle >> content [
 
 	cssClasses add: 'content'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> default [
 
 	cssClasses add: 'default'
 ]
 
-{ #category : #table }
+{ #category : 'table' }
 SemanticStyle >> definition [
 
 	cssClasses add: 'definition'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> description [
 
 	cssClasses add: 'description'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> disabled [
 
 	cssClasses add: 'disabled'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> divided [
 
 	cssClasses add: 'divided'
 ]
 
-{ #category : #grid }
+{ #category : 'grid' }
 SemanticStyle >> divider [
 
 	cssClasses add: 'divider'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> dividing [
 
 	cssClasses add: 'dividing'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> doubling [
 
 	cssClasses add: 'doubling'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> download [
 
 	cssClasses add: 'download'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> dropdown [
 
 	cssClasses add: 'dropdown'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> edit [
 
 	cssClasses add: 'edit'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> eight [
 
 	cssClasses add: 'eight'
 ]
 
-{ #category : #grid }
+{ #category : 'grid' }
 SemanticStyle >> equal [
 
 	cssClasses add: 'equal'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> error [
 
 	cssClasses add: 'error'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> field [
 
 	cssClasses add: 'field'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> fields [
 
 	cssClasses add: 'fields'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> file [
 
 	cssClasses add: 'file'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> fitted [
 
 	cssClasses add: 'fitted'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> five [
 
 	cssClasses add: 'five'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> fixed [
 
 	cssClasses add: 'fixed'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> floated [
 
 	cssClasses add: 'floated'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> fluid [
 
 	cssClasses add: 'fluid'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> form [
 
 	cssClasses add: 'form'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> four [
 
 	cssClasses add: 'four'
 ]
 
-{ #category : #grid }
+{ #category : 'grid' }
 SemanticStyle >> grid [
 
 	cssClasses add: 'grid'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> header [
 
 	cssClasses add: 'header'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> hidden [
 
 	cssClasses add: 'hidden'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> huge [
 
 	cssClasses add: 'huge'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> icon [
 
 	cssClasses add: 'icon'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> image [
 
 	cssClasses add: 'image'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> info [
 
 	cssClasses add: 'info'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticStyle >> initialize [
 
 	cssClasses := OrderedCollection new
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> inline [
 
 	cssClasses add: 'inline'
 ]
 
-{ #category : #input }
+{ #category : 'input' }
 SemanticStyle >> input [
 
 	cssClasses add: 'input'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> inverted [
 
 	cssClasses add: 'inverted'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> item [
 
 	cssClasses add: 'item'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> items [
 
 	cssClasses add: 'items'
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 SemanticStyle >> javascriptOn: aStream [
 
-	JSStream encodeString: self asString on: aStream
+	aStream render: self asString
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> label [
 
 	cssClasses add: 'label'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> labeled [
 
 	cssClasses add: 'labeled'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> large [
 
 	cssClasses add: 'large'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> left [
 
 	cssClasses add: 'left'
 ]
 
-{ #category : #container }
+{ #category : 'container' }
 SemanticStyle >> list [
 
 	cssClasses add: 'list'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> longer [
 
 	cssClasses add: 'longer'
 ]
 
-{ #category : #menu }
+{ #category : 'menu' }
 SemanticStyle >> menu [
 
 	cssClasses add: 'menu'
 ]
 
-{ #category : #container }
+{ #category : 'container' }
 SemanticStyle >> message [
 
 	cssClasses add: 'message'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> metadata [
 
 	cssClasses add: 'metadata'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> middle [
 
 	cssClasses add: 'middle'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> mini [
 
 	cssClasses add: 'mini'
 ]
 
-{ #category : #container }
+{ #category : 'container' }
 SemanticStyle >> modal [
 
 	cssClasses add: 'modal'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> negative [
 
 	cssClasses add: 'negative'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> ok [
 
 	cssClasses add: 'ok'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> olive [
 
 	cssClasses add: 'olive'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> one [
 
 	cssClasses add: 'one'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> orange [
 
 	cssClasses add: 'orange'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> outline [
 
 	cssClasses add: 'outline'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> pointing [
 
 	cssClasses add: 'pointing'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> positive [
 
 	cssClasses add: 'positive'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> primary [
 
 	cssClasses add: 'primary'
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 SemanticStyle >> printOn: aStream [
 
 	cssClasses do: [ :cssClass | aStream nextPutAll: cssClass ] separatedBy: [ aStream space ]
 ]
 
-{ #category : #input }
+{ #category : 'input' }
 SemanticStyle >> radio [
 
 	cssClasses add: 'radio'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> relaxed [
 
 	cssClasses add: 'relaxed'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> reply [
 
 	cssClasses add: 'reply'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> right [
 
 	cssClasses add: 'right'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> rounded [
 
 	cssClasses add: 'rounded'
 ]
 
-{ #category : #table }
+{ #category : 'table' }
 SemanticStyle >> row [
 
 	cssClasses add: 'row'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> search [
 
 	cssClasses add: 'search'
 ]
 
-{ #category : #menu }
+{ #category : 'menu' }
 SemanticStyle >> secondary [
 
 	cssClasses add: 'secondary'
 ]
 
-{ #category : #container }
+{ #category : 'container' }
 SemanticStyle >> segment [
 
 	cssClasses add: 'segment'
 ]
 
-{ #category : #container }
+{ #category : 'container' }
 SemanticStyle >> segments [
 
 	cssClasses add: 'segments'
 ]
 
-{ #category : #table }
+{ #category : 'table' }
 SemanticStyle >> selectable [
 
 	cssClasses add: 'selectable'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> selection [
 
 	cssClasses add: 'selection'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> seven [
 
 	cssClasses add: 'seven'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> signOut [
 
 	cssClasses add: 'sign-out'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> six [
 
 	cssClasses add: 'six'
 ]
 
-{ #category : #input }
+{ #category : 'input' }
 SemanticStyle >> slider [
 
 	cssClasses add: 'slider'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> small [
 
 	cssClasses add: 'small'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> stackable [
 
 	cssClasses add: 'stackable'
 ]
 
-{ #category : #table }
+{ #category : 'table' }
 SemanticStyle >> striped [
 
 	cssClasses add: 'striped'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> sub [
 
 	cssClasses add: 'sub'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> submit [
 
 	cssClasses add: 'submit'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> success [
 
 	cssClasses add: 'success'
 ]
 
-{ #category : #table }
+{ #category : 'table' }
 SemanticStyle >> table [
 
 	cssClasses add: 'table'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> text [
 
 	cssClasses add: 'text'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> thirteen [
 
 	cssClasses add: 'thirteen'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> three [
 
 	cssClasses add: 'three'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> tiny [
 
 	cssClasses add: 'tiny'
 ]
 
-{ #category : #input }
+{ #category : 'input' }
 SemanticStyle >> toggle [
 
 	cssClasses add: 'toggle'
 ]
 
-{ #category : #menu }
+{ #category : 'menu' }
 SemanticStyle >> top [
 
 	cssClasses add: 'top'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> trash [
 
 	cssClasses add: 'trash'
 ]
 
-{ #category : #numbers }
+{ #category : 'numbers' }
 SemanticStyle >> two [
 
 	cssClasses add: 'two'
 ]
 
-{ #category : #general }
+{ #category : 'general' }
 SemanticStyle >> ui [
 
 	cssClasses add: 'ui'
 ]
 
-{ #category : #icons }
+{ #category : 'icons' }
 SemanticStyle >> upload [
 
 	cssClasses add: 'upload'
 ]
 
-{ #category : #positioning }
+{ #category : 'positioning' }
 SemanticStyle >> vertical [
 
 	cssClasses add: 'vertical'
 ]
 
-{ #category : #sizes }
+{ #category : 'sizes' }
 SemanticStyle >> wide [
 
 	cssClasses add: 'wide'
 ]
 
-{ #category : #grid }
+{ #category : 'grid' }
 SemanticStyle >> width [
 
 	cssClasses add: 'width'
 ]
 
-{ #category : #color }
+{ #category : 'color' }
 SemanticStyle >> yellow [
 
 	cssClasses add: 'yellow'

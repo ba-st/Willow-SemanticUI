@@ -2,12 +2,14 @@
 I'm a WALibary serving the files from the official CDN.
 "
 Class {
-	#name : #SemanticUIOnlineLibrary,
-	#superclass : #WAOnlineLibrary,
-	#category : #'Willow-SemanticUI-Libraries'
+	#name : 'SemanticUIOnlineLibrary',
+	#superclass : 'WAOnlineLibrary',
+	#category : 'Willow-SemanticUI-Libraries',
+	#package : 'Willow-SemanticUI',
+	#tag : 'Libraries'
 }
 
-{ #category : #Updating }
+{ #category : 'Updating' }
 SemanticUIOnlineLibrary >> updateRoot: aRoot [
 
 	aRoot stylesheet
@@ -22,7 +24,7 @@ SemanticUIOnlineLibrary >> updateRoot: aRoot [
 		anonymousSubResourceIntegrity: 'sha256-fN8vcX2ULyTDspVTHEteK8hd3rQAb5thNiwakjAW75Q='
 ]
 
-{ #category : #Accessing }
+{ #category : 'Accessing' }
 SemanticUIOnlineLibrary >> version [
 
 	^'2.5.0'

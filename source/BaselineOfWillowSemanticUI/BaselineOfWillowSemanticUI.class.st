@@ -1,10 +1,11 @@
 Class {
-	#name : #BaselineOfWillowSemanticUI,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfWillowSemanticUI
+	#name : 'BaselineOfWillowSemanticUI',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfWillowSemanticUI',
+	#package : 'BaselineOfWillowSemanticUI'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWillowSemanticUI >> baseline: spec [
 
 	<baseline>
@@ -21,24 +22,24 @@ BaselineOfWillowSemanticUI >> baseline: spec [
 			]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BaselineOfWillowSemanticUI >> projectClass [
 
 	^ MetacelloCypressBaselineProject
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWillowSemanticUI >> setUpDependencies: spec [
 
 	spec
-		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v15' ];
+		baseline: 'Willow' with: [ spec repository: 'github://ba-st/Willow:v16' ];
 		project: 'Willow-Deployment' copyFrom: 'Willow' with: [ spec loads: 'Deployment' ];
 		project: 'Willow-SUnit' copyFrom: 'Willow' with: [ spec loads: 'Dependent-SUnit-Extensions' ];
 		project: 'Willow-Core-Tests' copyFrom: 'Willow' with: [ spec loads: 'Tests' ];
 		project: 'Willow-Tools' copyFrom: 'Willow' with: [ spec loads: 'Tools' ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfWillowSemanticUI >> setUpPackages: spec [
 
 	spec

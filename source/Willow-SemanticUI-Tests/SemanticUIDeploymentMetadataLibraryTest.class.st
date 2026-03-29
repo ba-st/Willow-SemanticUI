@@ -1,10 +1,12 @@
 Class {
-	#name : #SemanticUIDeploymentMetadataLibraryTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-SemanticUI-Tests-Libraries'
+	#name : 'SemanticUIDeploymentMetadataLibraryTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-SemanticUI-Tests-Libraries',
+	#package : 'Willow-SemanticUI-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticUIDeploymentMetadataLibraryTest >> testDeployFiles [
 
 	self
@@ -27,7 +29,7 @@ SemanticUIDeploymentMetadataLibraryTest >> testDeployFiles [
 			('semantic-ui-2.5.0/themes/default/assets/images/flags.png' -> '4a552ecb123ded5040ddda01d626103cc65db055')}
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticUIDeploymentMetadataLibraryTest >> testIsForDevelopment [
 
 	self
@@ -35,7 +37,7 @@ SemanticUIDeploymentMetadataLibraryTest >> testIsForDevelopment [
 		deny: SemanticUIDeploymentMetadataLibrary isForDevelopment
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticUIDeploymentMetadataLibraryTest >> testUpdateRoot [
 
 	| html |

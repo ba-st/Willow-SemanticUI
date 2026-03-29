@@ -2,30 +2,32 @@
 I'm a builder easing the creation of Semantic UI modals.
 "
 Class {
-	#name : #SemanticModalBuilder,
-	#superclass : #WillowComponentBuilder,
+	#name : 'SemanticModalBuilder',
+	#superclass : 'WillowComponentBuilder',
 	#instVars : [
 		'headerBinding',
 		'content',
 		'dialogCommand',
 		'footerButtons'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModalBuilder >> addFooterButton: aButton [
 
 	footerButtons add: aButton
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModalBuilder >> applyingToDialog: aDialogCommand [
 
 	dialogCommand := dialogCommand + aDialogCommand
 ]
 
-{ #category : #building }
+{ #category : 'building' }
 SemanticModalBuilder >> buildApplying: aDocumentCommand [
 
 	^ SemanticModal
@@ -35,7 +37,7 @@ SemanticModalBuilder >> buildApplying: aDocumentCommand [
 		applyingToDialog: dialogCommand + aDocumentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModalBuilder >> confirmWith: aString [
 
 	self
@@ -46,13 +48,13 @@ SemanticModalBuilder >> confirmWith: aString [
 				applying: [ :button | button addClass semantic: [ :style | style ui primary approve button ] ] )
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModalBuilder >> dismissableHeaderTitled: aRenderable [
 
 	headerBinding := Binding to: (SemanticModalHeader dismissableTitled: aRenderable)
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticModalBuilder >> initialize [
 
 	super initialize.
@@ -62,7 +64,7 @@ SemanticModalBuilder >> initialize [
 	dialogCommand := [  ] asWebComponentCommand
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModalBuilder >> wrapping: theContent [
 
 	content := theContent 

@@ -1,10 +1,12 @@
 Class {
-	#name : #SemanticUIOnlineLibraryTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-SemanticUI-Tests-Libraries'
+	#name : 'SemanticUIOnlineLibraryTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-SemanticUI-Tests-Libraries',
+	#package : 'Willow-SemanticUI-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #'tests-Updating' }
+{ #category : 'tests-Updating' }
 SemanticUIOnlineLibraryTest >> testUpdateRoot [
 
 	| html |

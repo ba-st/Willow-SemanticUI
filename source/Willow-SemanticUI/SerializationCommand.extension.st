@@ -1,6 +1,6 @@
-Extension { #name : #SerializationCommand }
+Extension { #name : 'SerializationCommand' }
 
-{ #category : #'*Willow-SemanticUI' }
+{ #category : '*Willow-SemanticUI' }
 SerializationCommand class >> forRelatedDialogForm [
 
 	^ self

@@ -1,6 +1,6 @@
-Extension { #name : #WebInteractionInterpreter }
+Extension { #name : 'WebInteractionInterpreter' }
 
-{ #category : #'*Willow-SemanticUI' }
+{ #category : '*Willow-SemanticUI' }
 WebInteractionInterpreter >> serializeRelatedDialogForm [
 
 	interaction onTriggerExecute: SerializationCommand forRelatedDialogForm 

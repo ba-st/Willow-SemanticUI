@@ -2,33 +2,35 @@
 I represent the footer in a Semantic UI modal.
 "
 Class {
-	#name : #SemanticModalFooter,
-	#superclass : #WAPainter,
+	#name : 'SemanticModalFooter',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'buttons'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticModalFooter class >> containing: aButtonCollection [
 
 	^ self new initializeContaining: aButtonCollection
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticModalFooter >> initializeContaining: aButtonCollection [
 
 	buttons := aButtonCollection
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticModalFooter >> on [
 
 	^ CombinedEventInterpreterDispatcher combiningInterpretersOfAll: buttons
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticModalFooter >> renderContentOn: aCanvas [
 
 	buttons

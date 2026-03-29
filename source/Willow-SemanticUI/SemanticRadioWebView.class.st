@@ -2,18 +2,20 @@
 A component to represent a Semantic UI set of buttons that behaves like a radio button.
 "
 Class {
-	#name : #SemanticRadioWebView,
-	#superclass : #SingleSelectionWebViewBehavior,
+	#name : 'SemanticRadioWebView',
+	#superclass : 'SingleSelectionWebViewBehavior',
 	#instVars : [
 		'renderingBlock',
 		'interactionInterpreter',
 		'identifierAssigner',
 		'inputCommand'
 	],
-	#category : #'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticRadioWebView class >> renderingWith: aRenderingBlock applyingToLabel: aLabelCommand applyingToInput: anInputCommand [
 
 	^self new
@@ -22,7 +24,7 @@ SemanticRadioWebView class >> renderingWith: aRenderingBlock applyingToLabel: aL
 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticRadioWebView >> initializeRenderingWith: aRenderingBlock applying: anInputCommand [
 
 	renderingBlock := aRenderingBlock.
@@ -32,13 +34,13 @@ SemanticRadioWebView >> initializeRenderingWith: aRenderingBlock applying: anInp
 	identifierAssigner := IdentifierAssigner prefixedBy: 'radio-button'
 ]
 
-{ #category : #configuring }
+{ #category : 'configuring' }
 SemanticRadioWebView >> on [
 
 	^ interactionInterpreter
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticRadioWebView >> renderContentOn: aCanvas [
 
 	aCanvas radioGroup
@@ -52,7 +54,7 @@ SemanticRadioWebView >> renderContentOn: aCanvas [
 	aCanvas document addLoadScript: (self semanticCheckboxScriptOn: aCanvas)
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticRadioWebView >> renderDivOn: aCanvas with: aRenderable [
 
 	aCanvas div
@@ -62,7 +64,7 @@ SemanticRadioWebView >> renderDivOn: aCanvas with: aRenderable [
 				with: aRenderable ]
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticRadioWebView >> renderInputFor: anElement asPartOf: aRadioGroup on: aCanvas [
 
 	| radioButton |
@@ -76,13 +78,13 @@ SemanticRadioWebView >> renderInputFor: anElement asPartOf: aRadioGroup on: aCan
 	self renderLabelFor: anElement on: aCanvas
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticRadioWebView >> renderLabelFor: anElement on: aCanvas [
 
 	aCanvas label: (renderingBlock value: anElement)
 ]
 
-{ #category : #'private - rendering' }
+{ #category : 'private - rendering' }
 SemanticRadioWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on: aCanvas [
 
 	self
@@ -90,7 +92,7 @@ SemanticRadioWebView >> renderRadioButtonFor: anElement asPartOf: aRadioGroup on
 		with: [ self renderInputFor: anElement asPartOf: aRadioGroup on: aCanvas ]
 ]
 
-{ #category : #'private - accessing' }
+{ #category : 'private - accessing' }
 SemanticRadioWebView >> semanticCheckboxScriptOn: aCanvas [
 
 	^ (aCanvas

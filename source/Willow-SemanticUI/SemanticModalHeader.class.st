@@ -2,27 +2,29 @@
 I represent the header in a Semantic UI modal.
 "
 Class {
-	#name : #SemanticModalHeader,
-	#superclass : #WAPainter,
+	#name : 'SemanticModalHeader',
+	#superclass : 'WAPainter',
 	#instVars : [
 		'title'
 	],
-	#category : 'Willow-SemanticUI-WebViews'
+	#category : 'Willow-SemanticUI-WebViews',
+	#package : 'Willow-SemanticUI',
+	#tag : 'WebViews'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 SemanticModalHeader class >> dismissableTitled: aRenderable [
 
 	^ self new initializeTitled: aRenderable
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 SemanticModalHeader >> initializeTitled: aRenderable [
 
 	title := aRenderable
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 SemanticModalHeader >> renderContentOn: aCanvas [
 
 	aCanvas icon class: SemanticStyle for close icon.

@@ -1,6 +1,6 @@
-Extension { #name : #WebInteractionInterpreterBehavior }
+Extension { #name : 'WebInteractionInterpreterBehavior' }
 
-{ #category : #'*Willow-SemanticUI' }
+{ #category : '*Willow-SemanticUI' }
 WebInteractionInterpreterBehavior >> serializeRelatedDialogForm [
 
 	self subclassResponsibility
