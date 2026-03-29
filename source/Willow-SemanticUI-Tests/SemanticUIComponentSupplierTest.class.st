@@ -1,10 +1,12 @@
 Class {
-	#name : #SemanticUIComponentSupplierTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-SemanticUI-Tests-Frontend'
+	#name : 'SemanticUIComponentSupplierTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-SemanticUI-Tests-Frontend',
+	#package : 'Willow-SemanticUI-Tests',
+	#tag : 'Frontend'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 SemanticUIComponentSupplierTest >> assertRenderingOf: aComponentCreationBlock equals: anExpectedHtml [
 
 	| component html |
@@ -16,31 +18,31 @@ SemanticUIComponentSupplierTest >> assertRenderingOf: aComponentCreationBlock eq
 	self assert: html equals: anExpectedHtml
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIComponentSupplierTest >> componentSupplier [
 
 	^ SemanticUIComponentSupplier online
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIComponentSupplierTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIComponentSupplierTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 SemanticUIComponentSupplierTest >> scriptGeneratorClass [
 
 	^ WADefaultScriptGenerator
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testAsynchronicButtonLabeledApplying [
 
 	self
@@ -49,7 +51,7 @@ SemanticUIComponentSupplierTest >> testAsynchronicButtonLabeledApplying [
 		equals: '<button class="ui button willow" type="button">Buy</button>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testAsynchronicLinkLabeledApplying [
 
 	self
@@ -59,7 +61,7 @@ SemanticUIComponentSupplierTest >> testAsynchronicLinkLabeledApplying [
 		'<a id="a-id1" class="willow">Buy</a><script type="text/javascript">$("#a-id1").click(function(event){arguments[0].preventDefault()});</script>'
 ]
 
-{ #category : #'tests-Supplying - Non Portable' }
+{ #category : 'tests-Supplying - Non Portable' }
 SemanticUIComponentSupplierTest >> testDialogBuilder [
 
 	| dialog |
@@ -77,7 +79,7 @@ SemanticUIComponentSupplierTest >> testDialogBuilder [
 			'<div class="ui modal" id="id1"><i class="close icon"></i><div class="header">Terms and Conditions</div><div class="content">Some very large legal stuff. ;)</div><div class="actions"><div id="container-id2" class="ui primary approve button">Ok</div></div></div><script type="text/javascript">$("#id1").modal({"allowMultiple":true,"onHidden":function(){$(this).remove();$("#willow-dialog-section").html("")},"autofocus":false,"closable":false}).modal("show");$("#container-id2").click(function(event){alert("Triggered!")});</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testDropdownListApplying [
 
 	self
@@ -93,7 +95,7 @@ SemanticUIComponentSupplierTest >> testDropdownListApplying [
 		'<select name="1" id="id2" class="willow"><option value="1">some</option><option value="2">thing</option><option value="3">another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);$("#id2").change(function(event){alert("Triggered!")});$("#id2").dropdown();</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testDropdownListApplyingApplyingToOptions [
 
 	self
@@ -108,7 +110,7 @@ SemanticUIComponentSupplierTest >> testDropdownListApplyingApplyingToOptions [
 		'<select name="1" id="id2" class="willow"><option value="1" hidden>some</option><option value="2" hidden>thing</option><option value="3" hidden>another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);$("#id2").dropdown();</script>'
 ]
 
-{ #category : #'tests-Supplying - Non Portable' }
+{ #category : 'tests-Supplying - Non Portable' }
 SemanticUIComponentSupplierTest >> testDropdownListNamedApplying [
 
 	self
@@ -125,7 +127,7 @@ SemanticUIComponentSupplierTest >> testDropdownListNamedApplying [
 		'<div class="item willow ui selection dropdown item" id="id1"><input name="2" id="input-id3" type="hidden"/><i class="dropdown icon"></i><div class="default text">The name</div><div class="menu"></div></div><script type="text/javascript">$("#id1").dropdown({"fullTextSearch":"exact"});$("#input-id3").change(function(event){alert("Triggered!")});</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApplying [
 
 	self
@@ -139,7 +141,7 @@ SemanticUIComponentSupplierTest >> testFieldSetContainingApplyingWithLegendApply
 		equals: '<fieldset disabled><legend autofocus>Its Title</legend>The View</fieldset>'
 ]
 
-{ #category : #'tests-Supplying - Non Portable' }
+{ #category : 'tests-Supplying - Non Portable' }
 SemanticUIComponentSupplierTest >> testInteractiveButtonDescribedBy [
 
 	self
@@ -154,7 +156,7 @@ SemanticUIComponentSupplierTest >> testInteractiveButtonDescribedBy [
 			'<button id="button-id1" class="ui button" type="submit">Buy</button><script type="text/javascript">$("#button-id1").click(function(event){alert("Triggered!")});</script>'
 ]
 
-{ #category : #'tests-Supplying - Non Portable' }
+{ #category : 'tests-Supplying - Non Portable' }
 SemanticUIComponentSupplierTest >> testInteractiveCheckBoxDescribedBy [
 
 	self
@@ -169,7 +171,7 @@ SemanticUIComponentSupplierTest >> testInteractiveCheckBoxDescribedBy [
 			'<div class="ui checkbox"><input name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><label for="input-id2">Buy</label></div><script type="text/javascript">$("#input-id2").click(function(event){alert("Triggered!")});</script>'
 ]
 
-{ #category : #'tests-Supplying - Non Portable' }
+{ #category : 'tests-Supplying - Non Portable' }
 SemanticUIComponentSupplierTest >> testInteractiveSelectableInputItemNamedInterpretedByDefaultingTo [
 
 	self
@@ -187,7 +189,7 @@ SemanticUIComponentSupplierTest >> testInteractiveSelectableInputItemNamedInterp
 			'<div class="item"><div class="ui checkbox toggle fitted"><input checked name="1" id="input-id2" type="checkbox"/><input name="3" type="hidden"/><label></label></div><div class="ui input" data-content="The label" id="id4"><input value="0" name="5" id="input-id6" type="text"/></div></div><script type="text/javascript">$("#input-id2").click(function(event){$(this).parent().next().toggleClass("disabled");alert("Triggered!")});$("#id4").popup({"inline":true});$("#input-id6").change(function(event){alert("Triggered!")});</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testMultiLineTextFieldApplying [
 
 	self
@@ -196,7 +198,7 @@ SemanticUIComponentSupplierTest >> testMultiLineTextFieldApplying [
 		equals: '<textarea rows="auto" cols="auto" name="1" class="willow"></textarea>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceApplying [
 
 	self
@@ -211,7 +213,7 @@ SemanticUIComponentSupplierTest >> testMultipleSelectionListBoxDisplayingAtOnceA
 		'<select name="1" size="15" class="willow" multiple><option value="1">some</option><option value="2">thing</option><option value="3">another</option></select><input name="2" type="hidden"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testNaturalNumberFieldApplying [
 
 	self
@@ -226,7 +228,7 @@ SemanticUIComponentSupplierTest >> testNaturalNumberFieldApplying [
 		'<div class="ui input"><input value="" name="1" type="number" min="0" class="willow" id="input-id2"/></div><script type="text/javascript">$("#input-id2").change(function(event){alert("Triggered!")});</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testRadioRenderingWithApplyingToLabelApplyingToInput [
 
 	self
@@ -245,7 +247,7 @@ SemanticUIComponentSupplierTest >> testRadioRenderingWithApplyingToLabelApplying
 		'<div class="inline fields"><div class="field"><div class="ui radio checkbox"><input name="1" class="willow" id="input-id2" value="1" type="radio"/><label>F</label></div></div><div class="field"><div class="ui radio checkbox"><input name="1" class="willow" id="input-id3" value="2" type="radio"/><label>H</label></div></div></div><script type="text/javascript">$("#input-id2").change(function(event){alert("Triggered!")});$("#input-id3").change(function(event){alert("Triggered!")});$(".ui.checkbox").checkbox();</script>'
 ]
 
-{ #category : #'tests-Supplying - Non Portable' }
+{ #category : 'tests-Supplying - Non Portable' }
 SemanticUIComponentSupplierTest >> testSimpleInput [
 
 	self
@@ -253,7 +255,7 @@ SemanticUIComponentSupplierTest >> testSimpleInput [
 		equals: '<div class="ui input"><input value="" name="1" type="text"/></div>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testSingleLineTextFieldApplying [
 
 	self
@@ -262,7 +264,7 @@ SemanticUIComponentSupplierTest >> testSingleLineTextFieldApplying [
 		equals: '<input value="" name="1" class="willow" type="text"/>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApplying [
 
 	self
@@ -277,7 +279,7 @@ SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApp
 		'<select name="1" id="id2" size="15" class="willow"><option value="1">some</option><option value="2">thing</option><option value="3">another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApplyingApplyingToOptions [
 
 	self
@@ -293,7 +295,7 @@ SemanticUIComponentSupplierTest >> testSingleSelectionListBoxDisplayingAtOnceApp
 		'<select name="1" id="id2" size="15" class="willow"><option value="1" hidden>some</option><option value="2" hidden>thing</option><option value="3" hidden>another</option></select><script type="text/javascript">$("#id2").prop("selectedIndex",-1);</script>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating [
 
 	self
@@ -306,7 +308,7 @@ SemanticUIComponentSupplierTest >> testSynchronicButtonLabeledApplyingEvaluating
 		equals: '<button name="1" class="ui button willow" type="submit">Search</button>'
 ]
 
-{ #category : #'tests-Supplying' }
+{ #category : 'tests-Supplying' }
 SemanticUIComponentSupplierTest >> testTableBuilderForHeadlessTable [
 
 	self
@@ -327,7 +329,7 @@ SemanticUIComponentSupplierTest >> testTableBuilderForHeadlessTable [
 		'<table class="ui table fixed"><tbody><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>3</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>'
 ]
 
-{ #category : #'tests-Processing' }
+{ #category : 'tests-Processing' }
 SemanticUIComponentSupplierTest >> testUpdateRoot [
 
 	| html |
@@ -343,7 +345,7 @@ SemanticUIComponentSupplierTest >> testUpdateRoot [
 		'<!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha256-cDGQ39yChhpN5vzgHbjIdGEtQ5kXE9tttCsI7VR9TuY=" crossorigin="anonymous"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha256-fN8vcX2ULyTDspVTHEteK8hd3rQAb5thNiwakjAW75Q=" crossorigin="anonymous"></script></head><body onload="onLoad()"><script type="text/javascript">function onLoad(){};</script></body></html>'
 ]
 
-{ #category : #'tests-Processing' }
+{ #category : 'tests-Processing' }
 SemanticUIComponentSupplierTest >> testUpdateRootWithSelfHostedLibraries [
 
 	| html |

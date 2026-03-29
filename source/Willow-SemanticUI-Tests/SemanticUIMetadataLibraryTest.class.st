@@ -1,10 +1,12 @@
 Class {
-	#name : #SemanticUIMetadataLibraryTest,
-	#superclass : #TestCase,
-	#category : 'Willow-SemanticUI-Tests-Libraries'
+	#name : 'SemanticUIMetadataLibraryTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-SemanticUI-Tests-Libraries',
+	#package : 'Willow-SemanticUI-Tests',
+	#tag : 'Libraries'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticUIMetadataLibraryTest >> testForDeployment [
 
 	self
@@ -12,7 +14,7 @@ SemanticUIMetadataLibraryTest >> testForDeployment [
 		equals: SemanticUIDeploymentMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticUIMetadataLibraryTest >> testForDevelopment [
 
 	self
@@ -20,7 +22,7 @@ SemanticUIMetadataLibraryTest >> testForDevelopment [
 		equals: SemanticUIDevelopmentMetadataLibrary
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticUIMetadataLibraryTest >> testVersionCompatibility [
 
 	self

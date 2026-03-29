@@ -1,34 +1,36 @@
 Class {
-	#name : #WillowSemanticUIApplicationTest,
-	#superclass : #BWRenderingTest,
-	#category : #'Willow-SemanticUI-Tests-Applications'
+	#name : 'WillowSemanticUIApplicationTest',
+	#superclass : 'BWRenderingTest',
+	#category : 'Willow-SemanticUI-Tests-Applications',
+	#package : 'Willow-SemanticUI-Tests',
+	#tag : 'Applications'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSemanticUIApplicationTest >> componentSupplier [
 
 	^ SemanticUIComponentSupplier online
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSemanticUIApplicationTest >> createHandlers [
 
 	^ Array with: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSemanticUIApplicationTest >> isSession [
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 WillowSemanticUIApplicationTest >> preferenceAt: aKey ifAbsent: aBlock [
 
 	^ aBlock value
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 WillowSemanticUIApplicationTest >> testRenderContentOnWithSemanticUI [
 
 	| html application |

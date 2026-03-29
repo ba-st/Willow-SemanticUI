@@ -1,16 +1,18 @@
 Class {
-	#name : #SemanticStyleTest,
-	#superclass : #TestCase,
-	#category : #'Willow-SemanticUI-Tests-WebViews'
+	#name : 'SemanticStyleTest',
+	#superclass : 'TestCase',
+	#category : 'Willow-SemanticUI-Tests-WebViews',
+	#package : 'Willow-SemanticUI-Tests',
+	#tag : 'WebViews'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testCards [
 
 	self assert: SemanticStyle for attached bottom asString equals: 'attached bottom'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testColor [
 
 	self
@@ -18,7 +20,7 @@ SemanticStyleTest >> testColor [
 		equals: 'approve brown error inverted ok olive orange success yellow'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testContainer [
 
 	self
@@ -26,7 +28,7 @@ SemanticStyleTest >> testContainer [
 		equals: 'container list message modal segment segments'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testGeneral [
 
 	self
@@ -38,13 +40,13 @@ SemanticStyleTest >> testGeneral [
 		'action actions active author basic button buttons close compact default description disabled divided dividing doubling dropdown field fields fitted fluid form header hidden icon image info item items label labeled longer metadata negative pointing positive primary relaxed reply search selection stackable sub submit text ui'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testGrid [
 
 	self assert: SemanticStyle for divider equal grid width asString equals: 'divider equal grid width'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testIcons [
 
 	self
@@ -52,7 +54,7 @@ SemanticStyleTest >> testIcons [
 		equals: 'alternate cloud download edit file outline sign-out trash upload'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testInput [
 
 	self
@@ -60,7 +62,7 @@ SemanticStyleTest >> testInput [
 		equals: 'checkbox input radio slider toggle'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testMenu [
 
 	self
@@ -68,7 +70,7 @@ SemanticStyleTest >> testMenu [
 		equals: 'borderless menu secondary top'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testNumbers [
 
 	self
@@ -76,7 +78,7 @@ SemanticStyleTest >> testNumbers [
 		equals: 'eight five four one seven six thirteen three two'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testPositioning [
 
 	self
@@ -84,7 +86,7 @@ SemanticStyleTest >> testPositioning [
 		equals: 'aligned fixed floated inline left middle right vertical'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testSizes [
 
 	self
@@ -92,7 +94,7 @@ SemanticStyleTest >> testSizes [
 		equals: 'big circular huge large mini rounded small tiny wide'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testTable [
 
 	self
@@ -100,7 +102,7 @@ SemanticStyleTest >> testTable [
 		equals: 'column definition row selectable striped table'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 SemanticStyleTest >> testViews [
 
 	self

@@ -1,1 +1,1 @@
-Package { #name : #'Willow-SemanticUI-Tests' }
+Package { #name : 'Willow-SemanticUI-Tests' }
